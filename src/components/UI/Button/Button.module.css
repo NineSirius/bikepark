@@ -1,0 +1,22 @@
+.btn {
+    color: #fff;
+    font-weight: 700;
+    border: unset;
+    background: var(--primary-color);
+    font-size: 20px;
+}
+
+.default {
+    padding: 20px 0;
+    min-width: 260px;
+    border-radius: 10px;
+}
+
+.default:hover {
+    cursor: pointer;
+    background: var(--primary-hover-color);
+}
+
+.default:disabled {
+    background: var(--borders-color);
+}
