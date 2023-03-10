@@ -1,0 +1,92 @@
+.tooltip {
+    position: relative;
+    display: inline-flex;
+}
+
+.tooltip input {
+    display: none;
+}
+
+.tooltip span {
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    transition: 0.2s;
+}
+
+.tooltip span:hover {
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.tooltip span.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.tooltipContent {
+    width: max-content;
+    max-width: 260px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background: #ffffff;
+    border: 1px solid var(--borders-color);
+    border-radius: 2px;
+    padding: 10px 24px;
+    border-radius: 10px;
+    z-index: 11;
+}
+
+.tooltipContent::before,
+.tooltipContent::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid var(--borders-color);
+}
+.tooltipContent::after {
+    border-bottom: 10px solid white;
+    top: -19px;
+}
+
+.tooltipContent.active {
+    display: flex;
+}
+
+.account {
+    max-width: 165px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+}
+
+.account a {
+    color: var(--text-color);
+}
+.account a:hover {
+    color: var(--text-color);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}

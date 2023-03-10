@@ -1,12 +1,16 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
 import Button from '@/components/UI/Button'
+import { Tooltip } from '@/components/UI/Tooltip'
 
 export default function Home() {
     return (
         <>
-            <h2>Hello</h2>
-            <Button type="default">Кнопка</Button>
+            <div className="container">
+                <h2>Content will be here</h2>
+                <center>
+                    <Tooltip title="hello">Hello World</Tooltip>
+                </center>
+            </div>
         </>
     )
 }

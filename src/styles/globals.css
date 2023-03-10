@@ -10,5 +10,36 @@
     --primary-color: #297fff;
     --primary-hover-color: #005eff;
 
+    --bg-color: #f2f4f7;
     --borders-color: #dde3eb;
+    --captions-color: #abb1c5;
+    --text-box-color: #737b98;
+    --text-color: #14233d;
+
+    --max-width: 1240px;
+
+    --big-title-size: 4.375rem;
+    --medium-title-size: 3.75rem;
+    --subtitle-size: 2.5rem;
+    --main-text-size: 1.875rem;
+    --caption-size: 1.25rem;
+    --link-size: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-hover-color);
+    text-decoration: underline;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 10px 20px;
 }

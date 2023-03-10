@@ -1,22 +1,45 @@
 .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
     font-weight: 700;
     border: unset;
     background: var(--primary-color);
     font-size: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
 }
 
 .default {
     padding: 20px 0;
     min-width: 260px;
-    border-radius: 10px;
+}
+.default_small {
+    padding: 12px 31px;
 }
 
-.default:hover {
+.default:hover,
+.default_small:hover {
     cursor: pointer;
     background: var(--primary-hover-color);
 }
 
-.default:disabled {
+.default:disabled,
+.default_small:disabled {
     background: var(--borders-color);
+}
+
+.square_outline {
+    cursor: pointer;
+    padding: 10px 15px;
+    background: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.square_outline:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-hover-color);
 }

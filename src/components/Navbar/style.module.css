@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+}
+
+.logo {
+    max-width: 66px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 40px;
+}
+
+.navLink {
+    color: var(--text-color);
+}
+
+.navLink.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.navLink:hover {
+    text-decoration: none;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone {
+    font-weight: 700;
+}
+
+.navTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navTime span {
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 14px;
+}
