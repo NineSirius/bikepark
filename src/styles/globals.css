@@ -43,3 +43,9 @@ a:hover {
     margin: 0 auto;
     padding: 10px 20px;
 }
+
+.card {
+    background: #f2f4f7;
+    border-radius: 20px;
+    padding: 50px 40px;
+}

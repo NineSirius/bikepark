@@ -25,7 +25,7 @@ export const Navbar = () => {
         const minutes =
             time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
 
-        setTimeDubai(`${hours}:${minutes} ${hours > 12 ? 'AM' : 'PM'}`)
+        setTimeDubai(`${hours}:${minutes} ${hours < 12 ? 'AM' : 'PM'}`)
     }, 1000)
 
     return (

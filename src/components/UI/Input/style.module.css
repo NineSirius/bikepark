@@ -1,0 +1,23 @@
+.inputWrap {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #dde3eb;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.inputWrap input {
+    display: inline-flex;
+    border: unset;
+    background: unset;
+    outline: unset;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.inputWrap input::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--text-box-color);
+}

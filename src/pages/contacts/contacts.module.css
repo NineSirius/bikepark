@@ -1,0 +1,51 @@
+.contactForm {
+    display: flex;
+    padding: 45px 0;
+}
+
+.contactForm span {
+    color: var(--captions-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    gap: 30px;
+}
+
+.contactInfo div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactInfo a {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.form {
+    flex-basis: 50%;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.formTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
