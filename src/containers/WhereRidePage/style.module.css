@@ -1,0 +1,50 @@
+.title {
+    font-size:38px;
+    color: var(--text-color);
+    margin: 43px 0;
+}
+.text{
+  margin: 20px 0;
+  max-width: 750px;
+}
+.textBottom{
+    max-width: 750px;
+
+}
+.img {
+  width: 100%;
+  height: auto;
+}
+.cardImg{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 24px;
+}
+.textImg{
+  display: flex;
+  align-items: center;
+  flex-basis: 60%;
+  gap: 41px;
+}
+.text2{
+  width: 500px;
+  margin-top: 32px;
+}
+.card{
+  margin-top: 50px;
+}
+.titleh4{
+  margin-top: 62px;
+}
+.textImgMini{
+  width: 260px;
+  padding-top:29px ;
+}
+.fourCard{
+  margin-top: 36px;
+  display: grid;
+  gap: 40px;
+ 
+  grid-template-columns: repeat(4, 1fr);
+}

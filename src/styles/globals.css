@@ -37,7 +37,16 @@ a:hover {
     color: var(--primary-hover-color);
     text-decoration: underline;
 }
+p{
+font-weight: 500;
+font-size: 18px;
+line-height: 140%;
 
+
+
+color: var(--text-color);
+
+}
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
