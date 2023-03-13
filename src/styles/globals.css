@@ -15,6 +15,7 @@
     --captions-color: #abb1c5;
     --text-box-color: #737b98;
     --text-color: #14233d;
+    --bg-footer: #272934;
 
     --max-width: 1240px;
 
@@ -37,12 +38,23 @@ a:hover {
     color: var(--primary-hover-color);
     text-decoration: underline;
 }
+p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+
+    color: var(--text-color);
+}
+ul {
+    list-style: none;
+}
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
     color: var(--text-color);
 }
 
@@ -56,26 +68,4 @@ h5 {
     background: #f2f4f7;
     border-radius: 20px;
     padding: 50px 40px;
-}
-
-.main {
-    padding: 50px 0;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.2s;
-    z-index: 10;
-}
-
-.overlay.active {
-    visibility: visible;
-    opacity: 1;
 }
