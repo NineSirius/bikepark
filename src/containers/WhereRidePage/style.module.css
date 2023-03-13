@@ -38,13 +38,16 @@
   margin-top: 62px;
 }
 .textImgMini{
-  width: 260px;
+  width: 250px;
   padding-top:29px ;
 }
 .fourCard{
   margin-top: 36px;
   display: grid;
-  gap: 40px;
+  gap: 30px;
  
   grid-template-columns: repeat(4, 1fr);
+}
+.imgMini{
+  width: 100%;
 }

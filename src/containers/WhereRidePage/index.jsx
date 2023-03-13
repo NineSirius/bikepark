@@ -31,24 +31,26 @@ const WhereRidePage = () => {
     <h4 className={styles.titleh4}>Заголовок </h4>
     <div className={styles.fourCard}>
       <div>  
-      <Image className={styles.imgMini} src="/img/dubai.png" width={250} height="200"/>
+      <Image className={styles.imgMini} src="/img/dubai.png" width={220} height="200"/>
             <p className={styles.textImgMini}>Товарищи! постоянный количественный рост и сфера нашей активности позволяет </p>
       </div>
       <div>
-         <Image className={styles.imgMini} src="/img/dubai.png" width={260} height="200"/>
+         <Image className={styles.imgMini} src="/img/dubai.png" width={220} height="200"/>
             <p className={styles.textImgMini}>Товарищи! постоянный количественный рост и сфера нашей активности позволяет </p>
       </div>
       <div>
-         <Image className={styles.imgMini} src="/img/dubai.png" width={260} height="200"/>
+         <Image className={styles.imgMini} src="/img/dubai.png" width={220} height="200"/>
             <p className={styles.textImgMini}>Товарищи! постоянный количественный рост и сфера нашей активности позволяет </p>
       </div>
       <div>
-         <Image className={styles.imgMini} src="/img/dubai.png" width={260} height="200"/>
+         <Image className={styles.imgMini} src="/img/dubai.png" width={220} height="200"/>
             <p className={styles.textImgMini}>Товарищи! постоянный количественный рост и сфера нашей активности позволяет </p>
       </div>
 
     </div>
     </div>
+    
+  
     </div>
   )
 }

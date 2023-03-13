@@ -1,0 +1,48 @@
+.footer {
+  background: var(--bg-footer);
+}
+.ul {
+  padding: 10px 0;
+}
+.a {
+  color: var(--bg-color);
+}
+.df {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+}
+.links {
+  margin-top: 53px;
+  display: flex;
+  justify-content: space-between;
+}
+.gap {
+  display: flex;
+  gap: 46px;
+}
+.white {
+  color: var(--bg-color);
+}
+.heightLink {
+  display: flex;
+  margin-top: 26px;
+  flex-direction: column;
+  gap: 10px;
+}
+.last {
+  display: flex;
+  justify-content: space-between;
+}
+.social {
+  display: flex;
+  gap: 44px;
+  margin-left: auto;
+}
+
+.last {
+  display: flex;
+  margin-top: 44px;
+
+  gap: 150px;
+}
