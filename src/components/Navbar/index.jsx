@@ -17,6 +17,9 @@ export const Navbar = () => {
 
     setInterval(() => {
         time = new Date()
+
+        const timeFormat = time.getHours <= 12 ? 'AM' : 'PM'
+
         const hours =
             time.getHours() - 2 > 12
                 ? time.getHours() - 14
@@ -25,7 +28,7 @@ export const Navbar = () => {
         const minutes =
             time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
 
-        setTimeDubai(`${hours}:${minutes} ${hours < 12 ? 'AM' : 'PM'}`)
+        setTimeDubai(`${hours}:${minutes} ${timeFormat}`)
     }, 1000)
 
     return (
@@ -63,7 +66,7 @@ export const Navbar = () => {
                     </Link>
 
                     <Tooltip type="account" title="User">
-                        <Link href="/orders">Управление заказами</Link>
+                        <Link href="/orders">Личный кабинет</Link>
                         <Link href="/orders">Выйти</Link>
                     </Tooltip>
                     <Button type="default_small">Feedback</Button>

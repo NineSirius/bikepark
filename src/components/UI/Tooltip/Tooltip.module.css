@@ -33,13 +33,15 @@
     top: 45px;
     left: 50%;
     transform: translateX(-50%);
-    display: none;
     background: #ffffff;
     border: 1px solid var(--borders-color);
     border-radius: 2px;
     padding: 10px 24px;
     border-radius: 10px;
     z-index: 11;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
 }
 
 .tooltipContent::before,
@@ -58,15 +60,14 @@
 }
 
 .tooltipContent.active {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
 }
 
 .account {
-    max-width: 165px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    display: none;
 }
 
 .account a {
