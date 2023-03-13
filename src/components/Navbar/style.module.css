@@ -64,6 +64,8 @@
     display: none;
 }
 
+/* Modal */
+
 @media (max-width: 1200px) {
     .navContainer {
         align-items: start;

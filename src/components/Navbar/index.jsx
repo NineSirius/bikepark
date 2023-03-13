@@ -8,16 +8,16 @@ import styles from './style.module.css'
 import { useEffect, useState } from 'react'
 import { Tooltip } from '../UI/Tooltip'
 import { Hamburger } from '../Hamburger'
+import { ContactForm } from './ContactForm'
 
 export const Navbar = () => {
     const { asPath } = useRouter()
+    const [feedbackActive, setFeedbackActive] = useState(false)
 
     const [timeDubai, setTimeDubai] = useState('0:00 AM')
     const [navActive, setNavActive] = useState(false)
 
     let time = new Date()
-
-    
 
     setInterval(() => {
         time = new Date()
@@ -80,15 +80,26 @@ export const Navbar = () => {
 
                         <Tooltip type="account" title="User">
                             <Link href="/orders">Личный кабинет</Link>
-                            <Link href="/orders">Выйти</Link>
+                            <Link href="/orders">Выйти</Link> 
                         </Tooltip>
-                        <Button type="nav_default_small">Feedback</Button>
+                        <Button
+                            type="nav_default_small"
+                            onClick={() => setFeedbackActive(true)}
+                        >
+                            Feedback
+                        </Button>
                     </div>
+
+                    <ContactForm
+                        feedbackActive={feedbackActive}
+                        setFeedbackActive={setFeedbackActive}
+                    />
                 </div>
                 <div className={styles.navTime}>
                     <h2>{timeDubai}</h2>
                     <span>Time in Dubai</span>
                 </div>
+
                 <Hamburger
                     onClick={() => setNavActive((navActive) => !navActive)}
                     isActive={navActive}

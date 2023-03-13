@@ -38,6 +38,14 @@ a:hover {
     text-decoration: underline;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--text-color);
+}
+
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -52,4 +60,22 @@ a:hover {
 
 .main {
     padding: 50px 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 10;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
 }
