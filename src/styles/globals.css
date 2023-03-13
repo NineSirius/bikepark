@@ -49,3 +49,7 @@ a:hover {
     border-radius: 20px;
     padding: 50px 40px;
 }
+
+.main {
+    padding: 50px 0;
+}

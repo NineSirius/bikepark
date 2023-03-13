@@ -7,29 +7,33 @@ import { navData } from './navData'
 import styles from './style.module.css'
 import { useEffect, useState } from 'react'
 import { Tooltip } from '../UI/Tooltip'
+import { Hamburger } from '../Hamburger'
 
 export const Navbar = () => {
     const { asPath } = useRouter()
 
-    const [timeDubai, setTimeDubai] = useState('00:00')
+    const [timeDubai, setTimeDubai] = useState('0:00 AM')
+    const [navActive, setNavActive] = useState(false)
 
     let time = new Date()
+
+    
 
     setInterval(() => {
         time = new Date()
 
-        const timeFormat = time.getHours <= 12 ? 'AM' : 'PM'
+        const worldTime = time.getUTCHours() + 4
 
-        const hours =
-            time.getHours() - 2 > 12
-                ? time.getHours() - 14
-                : time.getHours() - 2
+        const timeFormat = worldTime <= 12 ? 'AM' : 'PM'
+        const hours = worldTime > 12 ? worldTime - 12 : worldTime
 
         const minutes =
             time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
 
         setTimeDubai(`${hours}:${minutes} ${timeFormat}`)
     }, 1000)
+
+    const hamburgerActive = () => {}
 
     return (
         <header className={styles.header}>
@@ -43,39 +47,52 @@ export const Navbar = () => {
                     />
                 </div>
 
-                <nav className={styles.nav}>
-                    {navData.map((item) => {
-                        return (
-                            <Link
-                                key={item.id}
-                                href={item.path}
-                                className={clsx(
-                                    styles.navLink,
-                                    asPath === item.path && styles.active,
-                                )}
-                            >
-                                {item.title}
-                            </Link>
-                        )
-                    })}
-                </nav>
+                <div
+                    className={clsx(
+                        styles.mobileNavContainer,
+                        navActive && styles.active,
+                    )}
+                >
+                    <nav className={styles.nav}>
+                        {navData.map((item) => {
+                            return (
+                                <Link
+                                    key={item.id}
+                                    href={item.path}
+                                    className={clsx(
+                                        styles.navLink,
+                                        asPath === item.path && styles.active,
+                                    )}
+                                >
+                                    {item.title}
+                                </Link>
+                            )
+                        })}
+                    </nav>
 
-                <div className={styles.controls}>
-                    <Link href="tel:+971 52 563 4064" className={styles.phone}>
-                        +971 52 563 4064
-                    </Link>
+                    <div className={styles.controls}>
+                        <Link
+                            href="tel:+971 52 563 4064"
+                            className={styles.phone}
+                        >
+                            +971 52 563 4064
+                        </Link>
 
-                    <Tooltip type="account" title="User">
-                        <Link href="/orders">Личный кабинет</Link>
-                        <Link href="/orders">Выйти</Link>
-                    </Tooltip>
-                    <Button type="default_small">Feedback</Button>
-
-                    <div className={styles.navTime}>
-                        <h2>{timeDubai}</h2>
-                        <span>Time in Dubai</span>
+                        <Tooltip type="account" title="User">
+                            <Link href="/orders">Личный кабинет</Link>
+                            <Link href="/orders">Выйти</Link>
+                        </Tooltip>
+                        <Button type="nav_default_small">Feedback</Button>
                     </div>
                 </div>
+                <div className={styles.navTime}>
+                    <h2>{timeDubai}</h2>
+                    <span>Time in Dubai</span>
+                </div>
+                <Hamburger
+                    onClick={() => setNavActive((navActive) => !navActive)}
+                    isActive={navActive}
+                />
             </div>
         </header>
     )
