@@ -72,3 +72,21 @@ ul {
     border-radius: 20px;
     padding: 50px 40px;
 }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
