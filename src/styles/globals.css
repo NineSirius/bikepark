@@ -23,7 +23,7 @@
     --medium-title-size: 3.75rem;
     --subtitle-size: 2.5rem;
     --main-text-size: 1.875rem;
-    --caption-size: 1.25rem;
+    --caption-size: 1rem;
     --link-size: 1rem;
 }
 
@@ -71,10 +71,26 @@ ul {
     padding: 40px 0 100px 0;
 }
 
-.card {
+.card,
+.card-main {
+    position: relative;
     background: #f2f4f7;
     border-radius: 20px;
     padding: 50px 40px;
+}
+
+.card-main:first-child::before {
+    content: unset;
+}
+
+.card-main::before {
+    content: '';
+    position: absolute;
+    top: -35px;
+    display: flex;
+    width: 75px;
+    height: 35px;
+    background: url('/img/main-card-top.svg');
 }
 
 .overlay {
@@ -93,4 +109,21 @@ ul {
 .overlay.active {
     visibility: visible;
     opacity: 1;
+}
+
+.title {
+    font-size: 48px;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.caption {
+    font-size: var(--caption-size);
+    color: var(--captions-color);
 }
