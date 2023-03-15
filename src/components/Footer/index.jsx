@@ -7,7 +7,32 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={clsx(styles.footerContent, "container")}>
         <div className={styles.links}>
-          <h4 className={styles.white}>Аренда велосипедов</h4>
+          <ul className={styles.ul}>
+            <h4 className={styles.white}>Аренда велосипедов</h4>
+            <div className={styles.heightLink}>
+              <li>
+                <Link className={styles.a} href="">
+                  Алюминий
+                </Link>
+              </li>
+              <li>
+                <Link className={styles.a} href="">
+                  Карбон
+                </Link>
+              </li>
+              <li>
+                <Link className={styles.a} href="">
+                  Горные/городские
+                </Link>
+              </li>
+              <li>
+                <Link className={styles.a} href="">
+                  Городские эконом
+                </Link>
+              </li>
+            </div>
+          </ul>
+
           <div className={styles.gap}>
             <Link className={styles.a} href="">
               Правила
@@ -24,30 +49,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        <ul className={styles.ul}>
-          <div className={styles.heightLink}>
-            <li>
-              <Link className={styles.a} href="">
-                Алюминий
-              </Link>
-            </li>
-            <li>
-              <Link className={styles.a} href="">
-                Карбон
-              </Link>
-            </li>
-            <li>
-              <Link className={styles.a} href="">
-                Горные/городские
-              </Link>
-            </li>
-            <li>
-              <Link className={styles.a} href="">
-                Городские эконом
-              </Link>
-            </li>
-          </div>
-        </ul>
         <div className={styles.last}>
           <p className={styles.white}>© BikePark, 2021</p>
           <Link className={styles.a} href="">

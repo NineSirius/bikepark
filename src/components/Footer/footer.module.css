@@ -46,3 +46,22 @@
 
   gap: 150px;
 }
+
+/* //адаптив */
+
+@media (max-width: 768px) {
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .gap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .last {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
