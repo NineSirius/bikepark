@@ -1,9 +1,13 @@
-// import got from 'got'
+import ky from 'ky'
 
-// const strapiApi = got.extend({
+// const strapBackiApi = got.extend({
 //     prefixUrl: 'http://localhost:1337/api',
 // })
 
-// export const postQuestionRequest = async (data) => {
-//     await strapiApi.post({ json: data })
-// }
+// const strapFrontiApi = ky.create({
+//     prefixUrl: 'https://localhost:1337/api/',
+// })
+
+export const postQuestionRequest = (data) => {
+    return ky.post('https://localhost:1337/api/questions', data)
+}

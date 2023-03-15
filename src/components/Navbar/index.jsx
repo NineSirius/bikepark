@@ -5,10 +5,11 @@ import { useRouter } from 'next/router'
 import Button from '../UI/Button'
 import { navData } from './navData'
 import styles from './style.module.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Tooltip } from '../UI/Tooltip'
 import { Hamburger } from '../Hamburger'
 import { ContactForm } from './ContactForm'
+import { Modal } from '../UI/Modal'
 
 export const Navbar = () => {
     const { asPath } = useRouter()
@@ -80,7 +81,7 @@ export const Navbar = () => {
 
                         <Tooltip type="account" title="User">
                             <Link href="/orders">Личный кабинет</Link>
-                            <Link href="/orders">Выйти</Link> 
+                            <Link href="/orders">Выйти</Link>
                         </Tooltip>
                         <Button
                             type="nav_default_small"
@@ -90,10 +91,12 @@ export const Navbar = () => {
                         </Button>
                     </div>
 
-                    <ContactForm
-                        feedbackActive={feedbackActive}
-                        setFeedbackActive={setFeedbackActive}
-                    />
+                    <Modal
+                        isVisible={feedbackActive}
+                        close={() => setFeedbackActive(false)}
+                    >
+                        <ContactForm />
+                    </Modal>
                 </div>
                 <div className={styles.navTime}>
                     <h2>{timeDubai}</h2>

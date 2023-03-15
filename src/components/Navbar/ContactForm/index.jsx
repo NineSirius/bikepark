@@ -6,7 +6,7 @@ import { CheckBox } from '@/components/UI/Checkbox'
 import { useState } from 'react'
 import { postQuestionRequest } from '@/api/requests'
 
-export const ContactForm = ({ feedbackActive, setFeedbackActive }) => {
+export const ContactForm = () => {
     const [contactData, setContactData] = useState({
         name: '',
         phone: '',
@@ -16,14 +16,11 @@ export const ContactForm = ({ feedbackActive, setFeedbackActive }) => {
     const change = (e) => {
         setContactData((contactData) => {
             if (e.target.name !== 'agreement') {
-                console.log(e.target.value)
                 return {
                     ...contactData,
                     [e.target.name]: e.target.value,
                 }
             } else {
-                console.log(e.target.checked)
-
                 return {
                     ...contactData,
                     [e.target.name]: e.target.checked,
@@ -34,14 +31,11 @@ export const ContactForm = ({ feedbackActive, setFeedbackActive }) => {
 
     const submit = (e) => {
         e.preventDefault()
-        // postQuestionRequest(contactData)
+        postQuestionRequest(contactData)
     }
 
     return (
-        <Modal
-            isVisible={feedbackActive}
-            close={() => setFeedbackActive(false)}
-        >
+        <>
             <h2 className={styles.title}>
                 Есть вопросы? Оставьте номер, и мы все обсудим
             </h2>
@@ -83,6 +77,6 @@ export const ContactForm = ({ feedbackActive, setFeedbackActive }) => {
                     </Button>
                 </div>
             </form>
-        </Modal>
+        </>
     )
 }
