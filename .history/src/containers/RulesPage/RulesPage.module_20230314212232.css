@@ -1,0 +1,7 @@
+@media (max-width: 1400px) {
+  .cards {
+    display: flex;
+
+    gap: 40px;
+  }
+}

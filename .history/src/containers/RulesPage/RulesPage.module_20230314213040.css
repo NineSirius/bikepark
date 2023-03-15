@@ -1,0 +1,13 @@
+@media (max-width: 1400px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 40px;
+  }
+}
+
+.cards {
+  width: 33%;
+  flex-basis: 33%;
+}
