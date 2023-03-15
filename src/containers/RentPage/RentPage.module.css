@@ -3,3 +3,34 @@
     flex-direction: column;
     gap: 35px;
 }
+
+.header-banner {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.header-banner div {
+    position: absolute;
+    top: 0;
+    width: 320px;
+    height: 200px;
+}
+
+.header-banner div:nth-child(1) {
+    background: url('/img/header-banner-item1.svg') no-repeat;
+    right: 350px;
+    z-index: 1;
+}
+.header-banner div:nth-child(2) {
+    background: url('/img/header-banner-item2.svg') no-repeat;
+    right: 155px;
+    z-index: 2;
+}
+.header-banner div:nth-child(3) {
+    width: 270px;
+    background: url('/img/header-banner-item3.svg') no-repeat;
+    right: 0;
+    z-index: 3;
+}

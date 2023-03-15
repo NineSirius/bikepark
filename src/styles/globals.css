@@ -112,13 +112,13 @@ ul {
 }
 
 .title {
-    font-size: 48px;
+    font-size: 3rem;
     color: var(--text-color);
     margin-bottom: 30px;
 }
 
 .subtitle {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     font-size: 18px;
     color: var(--text-color);
 }
