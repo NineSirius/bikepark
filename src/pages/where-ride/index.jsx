@@ -1,9 +1,7 @@
-import WhereRidePage from "@/containers/WhereRidePage"
+import WhereRidePage from "@/containers/WhereRidePage";
 
 const WhereRide = () => {
-  return (
-    <WhereRidePage />
-  )
-}
+  return <WhereRidePage />;
+};
 
-export default WhereRide
+export default WhereRide;
