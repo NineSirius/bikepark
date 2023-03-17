@@ -4,33 +4,45 @@
     gap: 35px;
 }
 
+.header-banner-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 48px;
+    font-weight: 600;
+    flex-basis: 40%;
+}
+
 .header-banner {
     display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
+    align-items: center;
+    flex-basis: 60%;
 }
 
-.header-banner div {
+.header-banner-item {
+    width: 100%;
+    height: auto;
+}
+
+.header-banner-item {
     position: absolute;
     top: 0;
-    width: 320px;
+    width: 300px;
     height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
-.header-banner div:nth-child(1) {
+.header-banner-item:nth-child(1) {
     background: url('/img/header-banner-item1.svg') no-repeat;
-    right: 350px;
-    z-index: 1;
 }
-.header-banner div:nth-child(2) {
+.header-banner-item:nth-child(2) {
     background: url('/img/header-banner-item2.svg') no-repeat;
-    right: 155px;
-    z-index: 2;
 }
-.header-banner div:nth-child(3) {
-    width: 270px;
+.header-banner-item:nth-child(3) {
     background: url('/img/header-banner-item3.svg') no-repeat;
-    right: 0;
-    z-index: 3;
 }

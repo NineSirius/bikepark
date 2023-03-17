@@ -17,7 +17,7 @@
     --text-color: #14233d;
     --bg-footer: #272934;
 
-    --max-width: 1240px;
+    --max-width: 1280px;
 
     --big-title-size: 4.375rem;
     --medium-title-size: 3.75rem;
@@ -126,4 +126,15 @@ ul {
 .caption {
     font-size: var(--caption-size);
     color: var(--captions-color);
+}
+
+.fixed {
+    overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+    .card,
+    .card-main {
+        padding: 50px 20px;
+    }
 }

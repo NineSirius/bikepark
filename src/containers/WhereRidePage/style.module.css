@@ -1,91 +1,97 @@
 .title {
-  font-size: 38px;
-  color: var(--text-color);
-  margin: 43px 0;
+    font-size: 38px;
+    color: var(--text-color);
+    margin: 43px 0;
 }
 .text {
-  margin: 20px 0;
-  max-width: 750px;
+    margin: 20px 0;
+    max-width: 750px;
 }
 .textBottom {
-  max-width: 750px;
+    max-width: 750px;
 }
 .img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 .cardImg {
-  display: flex;
-  gap: 40px;
-  margin-top: 24px;
+    display: flex;
+    gap: 40px;
+    margin-top: 24px;
 }
 
 .cardImg img {
-  width: 30%;
+    width: 30%;
 }
 .textImg {
-  display: flex;
+    display: flex;
 
-  align-items: center;
-  gap: 41px;
+    align-items: center;
+    gap: 41px;
 }
 .text2 {
-  margin-top: 32px;
+    margin-top: 32px;
 }
 .textImg img {
-  width: 50%;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: auto;
+    width: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: auto;
 }
 .card {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 .titleh4 {
-  margin-top: 62px;
+    margin-top: 62px;
 }
 .textImgMini {
-  padding-top: 29px;
-  font-size: 1rem;
+    padding-top: 29px;
+    font-size: 1rem;
 }
 .fourCard {
-  margin-top: 36px;
-  display: flex;
-  gap: 30px;
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 .fourCard img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* adaptive */
 
 @media (max-width: 768px) {
-  .cardImg {
-    flex-wrap: wrap;
-  }
-  .cardImg img {
-    flex-grow: 1;
-  }
-  .textImg {
-    display: flex;
-    flex-direction: column;
-  }
+    .cardImg {
+        flex-wrap: wrap;
+    }
+    .cardImg img {
+        flex-grow: 1;
+    }
+    .textImg {
+        display: flex;
+        flex-direction: column;
+    }
 
-  .textImg img {
-    width: 100%;
-    height: auto;
-    object-fit: unset;
-  }
-  .fourCard {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .textImg img {
+        width: 100%;
+        height: auto;
+        object-fit: unset;
+    }
+
+    .fourCard {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 568px) {
-  .cardImg img {
-    width: 100%;
-  }
+    .cardImg img {
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .fourCard {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

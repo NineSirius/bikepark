@@ -5,11 +5,12 @@ import { useRouter } from 'next/router'
 import Button from '../UI/Button'
 import { navData } from './navData'
 import styles from './style.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Tooltip } from '../UI/Tooltip'
 import { Hamburger } from '../Hamburger'
 import { ContactForm } from './ContactForm'
 import { Modal } from '../UI/Modal'
+import { AuthForm } from '@/containers/AuthForm'
 
 export const Navbar = () => {
     const { asPath } = useRouter()
@@ -17,6 +18,15 @@ export const Navbar = () => {
 
     const [timeDubai, setTimeDubai] = useState('0:00 AM')
     const [navActive, setNavActive] = useState(false)
+    const [authActive, setAuthActive] = useState(false)
+
+    const [userJWT, setUserJWT] = useState()
+
+    useEffect(() => {
+        if (localStorage.getItem('user')) {
+            setUserJWT(localStorage.getItem('user'))
+        }
+    }, [])
 
     let time = new Date()
 
@@ -80,8 +90,29 @@ export const Navbar = () => {
                         </Link>
 
                         <Tooltip type="account" title="User">
-                            <Link href="/orders">Личный кабинет</Link>
-                            <Link href="/orders">Выйти</Link>
+                            {userJWT ? (
+                                <>
+                                    <Link href="/personal-cabinet">
+                                        Личный кабинет
+                                    </Link>
+                                    <Button
+                                        type="link"
+                                        onClick={() => {
+                                            localStorage.removeItem('user')
+                                            setUserJWT(null)
+                                        }}
+                                    >
+                                        Выйти
+                                    </Button>
+                                </>
+                            ) : (
+                                <Button
+                                    type="link"
+                                    onClick={() => setAuthActive(true)}
+                                >
+                                    Авторизация
+                                </Button>
+                            )}
                         </Tooltip>
                         <Button
                             type="nav_default_small"
@@ -102,6 +133,13 @@ export const Navbar = () => {
                     <h2>{timeDubai}</h2>
                     <span>Time in Dubai</span>
                 </div>
+
+                <Modal
+                    isVisible={authActive}
+                    close={() => setAuthActive(false)}
+                >
+                    <AuthForm closeAuth={() => setAuthActive(false)} />
+                </Modal>
 
                 <Hamburger
                     onClick={() => setNavActive((navActive) => !navActive)}

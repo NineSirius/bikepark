@@ -64,6 +64,21 @@
     border: 2px solid var(--primary-hover-color);
 }
 
+.link {
+    background: unset;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.link:hover {
+    color: var(--primary-hover-color);
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .nav_default_small {
         width: 100%;

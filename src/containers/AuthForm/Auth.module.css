@@ -1,0 +1,51 @@
+.auth {
+    max-width: 640px;
+}
+
+.tab-list {
+    display: flex;
+}
+
+.tab-list .tab {
+    flex-basis: 50%;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    padding: 15px;
+
+    color: var(--text-color);
+    border-bottom: 1px solid var(--borders-color);
+}
+
+.tab-list .tab:hover {
+    cursor: pointer;
+}
+.tab-list .tab[aria-selected='true'] {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 35px 0;
+}
+
+.input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 560px;
+}
+
+.input-wrap--row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-wrap--row span {
+    color: var(--text-color);
+    font-weight: 500;
+}
