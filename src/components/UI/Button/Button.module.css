@@ -9,6 +9,7 @@
     font-size: 20px;
     border-radius: 10px;
     transition: 0.2s;
+    font-family: inherit;
 }
 
 .default,
@@ -67,12 +68,12 @@
 .link {
     background: unset;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-color);
 }
 
 .link:hover {
-    color: var(--primary-hover-color);
+    text-decoration: underline;
 }
 
 .link:hover {

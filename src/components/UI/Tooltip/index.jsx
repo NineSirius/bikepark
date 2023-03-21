@@ -3,8 +3,7 @@ import { useState } from 'react'
 import Button from '../Button'
 import styles from './Tooltip.module.css'
 
-export const Tooltip = ({ children, type, title }) => {
-    const [isVisible, setIsVisible] = useState(false)
+export const Tooltip = ({ children, type, title, isVisible, setIsVisible }) => {
     const change = () => {
         setIsVisible((state) => !state)
     }

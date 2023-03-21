@@ -1,4 +1,5 @@
 import { addNewUser, getFullUserInfo, loginUser } from '@/api/requests'
+import { Alert } from '@/components/UI/Alert'
 import Button from '@/components/UI/Button'
 import { CheckBox } from '@/components/UI/Checkbox'
 import { Input } from '@/components/UI/Input'
@@ -24,6 +25,16 @@ export const AuthForm = ({ closeAuth }) => {
 
     const [registerResult, setRegisterResult] = useState(null)
 
+    const [errorStatus, setErrorStatus] = useState({
+        errorMessage: {},
+        status: false,
+    })
+
+    const [registerStatus, setRegisterStatus] = useState({
+        regRequestMessage: {},
+        status: false,
+    })
+
     const registerChange = (e) => {
         setRegisterUserData((user) => {
             if (e.target.name !== 'agreement') {
@@ -47,6 +58,9 @@ export const AuthForm = ({ closeAuth }) => {
             .then((data) => {
                 localStorage.setItem('user', data.jwt)
                 setRegisterResult('Регистрация выполнена успешно')
+                setTimeout(() => {
+                    location.reload()
+                }, 3000)
             })
     }
 
@@ -71,6 +85,16 @@ export const AuthForm = ({ closeAuth }) => {
                 localStorage.setItem('user', data.jwt)
                 location.reload()
             })
+            .catch((error) => {
+                console.log(error)
+                setErrorStatus((errorStatus) => {
+                    return {
+                        ...errorStatus,
+                        errorMessage: error,
+                        status: true,
+                    }
+                })
+            })
     }
 
     return (
@@ -84,6 +108,25 @@ export const AuthForm = ({ closeAuth }) => {
                 <TabPanel>
                     <form onSubmit={loginSubmit}>
                         <div className={styles['login-form']}>
+                            {errorStatus.status && (
+                                <Alert
+                                    type="error"
+                                    isVisible={errorStatus.status}
+                                    close={() =>
+                                        setErrorStatus((errorStatus) => {
+                                            return {
+                                                ...errorStatus,
+                                                status: false,
+                                            }
+                                        })
+                                    }
+                                >
+                                    {errorStatus.errorMessage.response
+                                        .status === 400
+                                        ? 'Неверный логин или пароль'
+                                        : 'Возникла ошибка, попробуйте позже'}
+                                </Alert>
+                            )}
                             <div className={styles['input-wrap']}>
                                 <span className="caption">
                                     Введите номер телефона*
@@ -113,7 +156,9 @@ export const AuthForm = ({ closeAuth }) => {
                     <form onSubmit={registerSubmit}>
                         <div className={styles['login-form']}>
                             {registerResult !== null ? (
-                                <h2>{registerResult}</h2>
+                                <Alert type="success">
+                                    Регистрация выполнена успешно <br />
+                                </Alert>
                             ) : null}
                             <div className={styles['input-wrap']}>
                                 <span className="caption">Имя*</span>

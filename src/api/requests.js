@@ -1,5 +1,4 @@
 import ky from 'ky'
-import { headers } from '../../next.config'
 
 // const strapBackiApi = got.extend({
 //     prefixUrl: 'http://localhost:1337/api',
@@ -9,9 +8,11 @@ const strapFrontiApi = ky.create({
     prefixUrl: 'http://localhost:1337/api/',
 })
 
-export const postQuestionRequest = (data) => {
-    return strapFrontiApi.post('https://localhost:1337/api/questions', {
-        json: data,
+export const postQuestionRequest = (question) => {
+    return strapFrontiApi.post('questions', {
+        json: {
+            data: question,
+        },
     })
 }
 

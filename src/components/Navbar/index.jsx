@@ -15,6 +15,7 @@ import { AuthForm } from '@/containers/AuthForm'
 export const Navbar = () => {
     const { asPath } = useRouter()
     const [feedbackActive, setFeedbackActive] = useState(false)
+    const [userPopUp, setUserPopUp] = useState(false)
 
     const [timeDubai, setTimeDubai] = useState('0:00 AM')
     const [navActive, setNavActive] = useState(false)
@@ -27,6 +28,10 @@ export const Navbar = () => {
             setUserJWT(localStorage.getItem('user'))
         }
     }, [])
+
+    useEffect(() => {
+        setNavActive(false)
+    }, [asPath])
 
     let time = new Date()
 
@@ -89,7 +94,12 @@ export const Navbar = () => {
                             +971 52 563 4064
                         </Link>
 
-                        <Tooltip type="account" title="User">
+                        <Tooltip
+                            type="account"
+                            title="User"
+                            isVisible={userPopUp}
+                            setIsVisible={setUserPopUp}
+                        >
                             {userJWT ? (
                                 <>
                                     <Link href="/personal-cabinet">
@@ -108,7 +118,10 @@ export const Navbar = () => {
                             ) : (
                                 <Button
                                     type="link"
-                                    onClick={() => setAuthActive(true)}
+                                    onClick={() => {
+                                        setAuthActive(true)
+                                        setUserPopUp(false)
+                                    }}
                                 >
                                     Авторизация
                                 </Button>
