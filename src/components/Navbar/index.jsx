@@ -1,113 +1,105 @@
-import clsx from 'clsx'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Button from '../UI/Button'
-import { navData } from './navData'
-import styles from './style.module.css'
-import { useState } from 'react'
-import { Tooltip } from '../UI/Tooltip'
-import { Hamburger } from '../Hamburger'
-import { ContactForm } from './ContactForm'
-import { Modal } from '../UI/Modal'
+import clsx from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Button from "../UI/Button";
+import { navData } from "./navData";
+import styles from "./style.module.css";
+import { useState } from "react";
+import { Tooltip } from "../UI/Tooltip";
+import { Hamburger } from "../Hamburger";
+import { ContactForm } from "./ContactForm";
+import { Modal } from "../UI/Modal";
 
 export const Navbar = () => {
-    const { asPath } = useRouter()
-    const [feedbackActive, setFeedbackActive] = useState(false)
+  const { asPath } = useRouter();
+  const [feedbackActive, setFeedbackActive] = useState(false);
 
-    const [timeDubai, setTimeDubai] = useState('0:00 AM')
-    const [navActive, setNavActive] = useState(false)
+  const [timeDubai, setTimeDubai] = useState("0:00 AM");
+  const [navActive, setNavActive] = useState(false);
 
-    let time = new Date()
+  let time = new Date();
 
-    setInterval(() => {
-        time = new Date()
+  setInterval(() => {
+    time = new Date();
 
-        const worldTime = time.getUTCHours() + 4
+    const worldTime = time.getUTCHours() + 4;
 
-        const timeFormat = worldTime <= 12 ? 'AM' : 'PM'
-        const hours = worldTime > 12 ? worldTime - 12 : worldTime
+    const timeFormat = worldTime <= 12 ? "AM" : "PM";
+    const hours = worldTime > 12 ? worldTime - 12 : worldTime;
 
-        const minutes =
-            time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
+    const minutes =
+      time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes();
 
-        setTimeDubai(`${hours}:${minutes} ${timeFormat}`)
-    }, 1000)
+    setTimeDubai(`${hours}:${minutes} ${timeFormat}`);
+  }, 1000);
 
-    const hamburgerActive = () => {}
+  const hamburgerActive = () => {};
 
-    return (
-        <header className={styles.header}>
-            <div className={clsx('container', styles.navContainer)}>
-                <div className="logo">
-                    <Image
-                        src="/img/logo.svg"
-                        alt="logo"
-                        width="66"
-                        height="42"
-                    />
-                </div>
+  return (
+    <header className={styles.header}>
+      <div className={clsx("container", styles.navContainer)}>
+        <div className="logo">
+          <Image src="/img/logo.svg" alt="logo" width="66" height="42" />
+        </div>
 
-                <div
-                    className={clsx(
-                        styles.mobileNavContainer,
-                        navActive && styles.active,
-                    )}
+        <div
+          className={clsx(
+            styles.mobileNavContainer,
+            navActive && styles.active
+          )}
+        >
+          <nav className={styles.nav}>
+            {navData.map((item) => {
+              return (
+                <Link
+                  key={item.id}
+                  href={item.path}
+                  className={clsx(
+                    styles.navLink,
+                    asPath === item.path && styles.active
+                  )}
                 >
-                    <nav className={styles.nav}>
-                        {navData.map((item) => {
-                            return (
-                                <Link
-                                    key={item.id}
-                                    href={item.path}
-                                    className={clsx(
-                                        styles.navLink,
-                                        asPath === item.path && styles.active,
-                                    )}
-                                >
-                                    {item.title}
-                                </Link>
-                            )
-                        })}
-                    </nav>
+                  {item.title}
+                </Link>
+              );
+            })}
+          </nav>
 
-                    <div className={styles.controls}>
-                        <Link
-                            href="tel:+971 52 563 4064"
-                            className={styles.phone}
-                        >
-                            +971 52 563 4064
-                        </Link>
+          <div className={styles.controls}>
+            <Link href="tel:+971 52 563 4064" className={styles.phone}>
+              +971 52 563 4064
+            </Link>
 
-                        <Tooltip type="account" title="User">
-                            <Link href="/orders">Личный кабинет</Link>
-                            <Link href="/orders">Выйти</Link>
-                        </Tooltip>
-                        <Button
-                            type="nav_default_small"
-                            onClick={() => setFeedbackActive(true)}
-                        >
-                            Feedback
-                        </Button>
-                    </div>
+            <Tooltip type="account" title="User">
+              <Link href="/personal-cabinet">Личный кабинет</Link>
+              <Link href="/orders">Выйти</Link>
+            </Tooltip>
+            <Button
+              type="nav_default_small"
+              onClick={() => setFeedbackActive(true)}
+            >
+              Feedback
+            </Button>
+          </div>
 
-                    <Modal
-                        isVisible={feedbackActive}
-                        close={() => setFeedbackActive(false)}
-                    >
-                        <ContactForm />
-                    </Modal>
-                </div>
-                <div className={styles.navTime}>
-                    <h2>{timeDubai}</h2>
-                    <span>Time in Dubai</span>
-                </div>
+          <Modal
+            isVisible={feedbackActive}
+            close={() => setFeedbackActive(false)}
+          >
+            <ContactForm />
+          </Modal>
+        </div>
+        <div className={styles.navTime}>
+          <h2>{timeDubai}</h2>
+          <span>Time in Dubai</span>
+        </div>
 
-                <Hamburger
-                    onClick={() => setNavActive((navActive) => !navActive)}
-                    isActive={navActive}
-                />
-            </div>
-        </header>
-    )
-}
+        <Hamburger
+          onClick={() => setNavActive((navActive) => !navActive)}
+          isActive={navActive}
+        />
+      </div>
+    </header>
+  );
+};
