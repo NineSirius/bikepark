@@ -3,6 +3,7 @@ import { Alert } from '@/components/UI/Alert'
 import Button from '@/components/UI/Button'
 import { CheckBox } from '@/components/UI/Checkbox'
 import { Input } from '@/components/UI/Input'
+import { Tooltip } from '@/components/UI/Tooltip'
 import { URLSearchParams } from 'next/dist/compiled/@edge-runtime/primitives/url'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -108,7 +109,7 @@ export const AuthForm = ({ closeAuth }) => {
                 <TabPanel>
                     <form onSubmit={loginSubmit}>
                         <div className={styles['login-form']}>
-                            {errorStatus.status && (
+                            {/* {errorStatus.status && (
                                 <Alert
                                     type="error"
                                     isVisible={errorStatus.status}
@@ -126,7 +127,7 @@ export const AuthForm = ({ closeAuth }) => {
                                         ? 'Неверный логин или пароль'
                                         : 'Возникла ошибка, попробуйте позже'}
                                 </Alert>
-                            )}
+                            )} */}
                             <div className={styles['input-wrap']}>
                                 <span className="caption">
                                     Введите номер телефона*
@@ -167,7 +168,7 @@ export const AuthForm = ({ closeAuth }) => {
                                     placeholder="Введите имя"
                                     name="username"
                                     onChange={registerChange}
-                                />
+                                    />
                             </div>
                             <div className={styles['input-wrap']}>
                                 <span className="caption">Номер телефона*</span>

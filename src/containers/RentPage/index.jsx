@@ -3,13 +3,16 @@ import styles from './RentPage.module.css'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Select } from '@/components/UI/Select'
+import { Tooltip } from '@/components/UI/Tooltip'
+import { useState } from 'react'
 
 export const RentPage = () => {
+    const [typeInfo, setTypeInfo] = useState(false)
     return (
         <div className="container">
             <div className={styles['card-main-wrap']}>
                 <div className="card-main">
-                    {/* <div className={styles['header-banner-wrap']}>
+                    <div className={styles['header-banner-wrap']}>
                         <h1 className={clsx('title', styles['card-title'])}>
                             Аренда велосипедов <br /> c доставкой
                         </h1>
@@ -17,7 +20,7 @@ export const RentPage = () => {
                         <div className={styles['header-banner']}>
                             <div className={styles['header-banner-item']}>
                                 <Image
-                                    src="/img/header-banner-item1.svg"
+                                    src="/img/helmet.png"
                                     width={1280}
                                     height={720}
                                     alt="Шлем"
@@ -33,7 +36,7 @@ export const RentPage = () => {
                             </div>
                             <div className={styles['header-banner-item']}>
                                 <Image
-                                    src="/img/header-banner-item2.svg"
+                                    src="/img/helmet.png"
                                     width={1280}
                                     height={720}
                                     alt="Шланг"
@@ -49,7 +52,7 @@ export const RentPage = () => {
                             </div>
                             <div className={styles['header-banner-item']}>
                                 <Image
-                                    src="/img/header-banner-item3.svg"
+                                    src="/img/helmet.png"
                                     width={1280}
                                     height={720}
                                     alt="Чота там"
@@ -64,7 +67,7 @@ export const RentPage = () => {
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="card-main">
                     <Select elems={['По адресу', 'Самовызов ']} />

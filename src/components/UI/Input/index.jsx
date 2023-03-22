@@ -12,6 +12,7 @@ export const Input = ({ type, placeholder, onChange, name, required }) => {
                         placeholder={placeholder}
                         required={required && required}
                     />
+                    <div></div>
                 </div>
             </label>
         </>
