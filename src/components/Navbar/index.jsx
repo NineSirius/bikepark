@@ -33,66 +33,58 @@ export const Navbar = () => {
         setNavActive(false)
     }, [asPath])
 
-    let time = new Date()
+  let time = new Date();
 
-    setInterval(() => {
-        time = new Date()
+  setInterval(() => {
+    time = new Date();
 
-        const worldTime = time.getUTCHours() + 4
+    const worldTime = time.getUTCHours() + 4;
 
-        const timeFormat = worldTime <= 12 ? 'AM' : 'PM'
-        const hours = worldTime > 12 ? worldTime - 12 : worldTime
+    const timeFormat = worldTime <= 12 ? "AM" : "PM";
+    const hours = worldTime > 12 ? worldTime - 12 : worldTime;
 
-        const minutes =
-            time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
+    const minutes =
+      time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes();
 
-        setTimeDubai(`${hours}:${minutes} ${timeFormat}`)
-    }, 1000)
+    setTimeDubai(`${hours}:${minutes} ${timeFormat}`);
+  }, 1000);
 
-    const hamburgerActive = () => {}
+  const hamburgerActive = () => {};
 
-    return (
-        <header className={styles.header}>
-            <div className={clsx('container', styles.navContainer)}>
-                <div className="logo">
-                    <Image
-                        src="/img/logo.svg"
-                        alt="logo"
-                        width="66"
-                        height="42"
-                    />
-                </div>
+  return (
+    <header className={styles.header}>
+      <div className={clsx("container", styles.navContainer)}>
+        <div className="logo">
+          <Image src="/img/logo.svg" alt="logo" width="66" height="42" />
+        </div>
 
-                <div
-                    className={clsx(
-                        styles.mobileNavContainer,
-                        navActive && styles.active,
-                    )}
+        <div
+          className={clsx(
+            styles.mobileNavContainer,
+            navActive && styles.active
+          )}
+        >
+          <nav className={styles.nav}>
+            {navData.map((item) => {
+              return (
+                <Link
+                  key={item.id}
+                  href={item.path}
+                  className={clsx(
+                    styles.navLink,
+                    asPath === item.path && styles.active
+                  )}
                 >
-                    <nav className={styles.nav}>
-                        {navData.map((item) => {
-                            return (
-                                <Link
-                                    key={item.id}
-                                    href={item.path}
-                                    className={clsx(
-                                        styles.navLink,
-                                        asPath === item.path && styles.active,
-                                    )}
-                                >
-                                    {item.title}
-                                </Link>
-                            )
-                        })}
-                    </nav>
+                  {item.title}
+                </Link>
+              );
+            })}
+          </nav>
 
-                    <div className={styles.controls}>
-                        <Link
-                            href="tel:+971 52 563 4064"
-                            className={styles.phone}
-                        >
-                            +971 52 563 4064
-                        </Link>
+          <div className={styles.controls}>
+            <Link href="tel:+971 52 563 4064" className={styles.phone}>
+              +971 52 563 4064
+            </Link>
 
                         <Tooltip
                             type="account"
@@ -154,11 +146,11 @@ export const Navbar = () => {
                     <AuthForm closeAuth={() => setAuthActive(false)} />
                 </Modal>
 
-                <Hamburger
-                    onClick={() => setNavActive((navActive) => !navActive)}
-                    isActive={navActive}
-                />
-            </div>
-        </header>
-    )
-}
+        <Hamburger
+          onClick={() => setNavActive((navActive) => !navActive)}
+          isActive={navActive}
+        />
+      </div>
+    </header>
+  );
+};

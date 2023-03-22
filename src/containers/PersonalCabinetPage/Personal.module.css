@@ -1,0 +1,41 @@
+.titles {
+  width: 1200px;
+  display: flex;
+
+  justify-content: center;
+}
+.title {
+  width: 355px;
+  margin-top: 43px;
+  text-align: center;
+  outline: none;
+  border-bottom: 1px solid var(--captions-color);
+  padding-bottom: 25px;
+  cursor: pointer;
+}
+.title[aria-selected="true"] {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.form {
+  margin-top: 33px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.input-wrap:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linkPassword {
+  border-bottom: 1px solid var(--captions-color);
+}
+.linkPassword[aria-selected="true"] {
+  border-bottom: 1px solid var(--primary-color);
+}
+.btn {
+  margin-top: 40px;
+}
