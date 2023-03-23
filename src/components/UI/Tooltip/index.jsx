@@ -3,7 +3,14 @@ import { useState } from 'react'
 import Button from '../Button'
 import styles from './Tooltip.module.css'
 
-export const Tooltip = ({ children, type, title, isVisible, setIsVisible }) => {
+export const Tooltip = ({
+    children,
+    type,
+    title,
+    isVisible,
+    setIsVisible,
+    icon,
+}) => {
     const change = () => {
         setIsVisible((state) => !state)
     }
@@ -14,7 +21,8 @@ export const Tooltip = ({ children, type, title, isVisible, setIsVisible }) => {
                     <label>
                         <input type="checkbox" onChange={change} />
                         <span className={isVisible && styles.active}>
-                            {title}
+                            {title && title}
+                            {icon && <i className={`icon-${icon}`}></i>}
                         </span>
                     </label>
                 </div>

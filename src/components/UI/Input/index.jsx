@@ -1,6 +1,13 @@
 import styles from './style.module.css'
 
-export const Input = ({ type, placeholder, onChange, name, required }) => {
+export const Input = ({
+    type,
+    placeholder,
+    onChange,
+    name,
+    required,
+    value,
+}) => {
     return (
         <>
             <label>
@@ -11,6 +18,7 @@ export const Input = ({ type, placeholder, onChange, name, required }) => {
                         onChange={onChange && onChange}
                         placeholder={placeholder}
                         required={required && required}
+                        value={value && value}
                     />
                     <div></div>
                 </div>

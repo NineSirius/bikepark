@@ -36,14 +36,14 @@ export const RentPage = () => {
                             </div>
                             <div className={styles['header-banner-item']}>
                                 <Image
-                                    src="/img/helmet.png"
+                                    src="/img/flashlight.png"
                                     width={1280}
                                     height={720}
                                     alt="Шланг"
                                 />
                                 <div className={styles.info}>
                                     <h4 className={styles['info-title']}>
-                                        Шлем
+                                        Фонарик
                                     </h4>
                                     <span className={styles['info-price']}>
                                         Бесплатно
@@ -52,14 +52,14 @@ export const RentPage = () => {
                             </div>
                             <div className={styles['header-banner-item']}>
                                 <Image
-                                    src="/img/helmet.png"
+                                    src="/img/lock.png"
                                     width={1280}
                                     height={720}
                                     alt="Чота там"
                                 />
                                 <div className={styles.info}>
                                     <h4 className={styles['info-title']}>
-                                        Шлем
+                                        Замок
                                     </h4>
                                     <span className={styles['info-price']}>
                                         Бесплатно
@@ -68,9 +68,19 @@ export const RentPage = () => {
                             </div>
                         </div>
                     </div>
+
+                    <div className={styles['filter-wrap']}>
+                        <div className={styles['filter-item']}>
+                            <span className="caption">Доставка</span>
+                            <Select
+                                name="name"
+                                options={['По адресу', 'Самовызов']}
+                            />
+                        </div>
+                    </div>
                 </div>
                 <div className="card-main">
-                    <Select elems={['По адресу', 'Самовызов ']} />
+                    <span className='caption'>Тип велосипеда</span>
                 </div>
             </div>
         </div>

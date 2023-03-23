@@ -30,6 +30,11 @@ export const Navbar = () => {
     }, [])
 
     useEffect(() => {
+        navActive && document.body.classList.add('fixed')
+        !navActive && document.body.classList.remove('fixed')
+    }, [navActive])
+
+    useEffect(() => {
         setNavActive(false)
     }, [asPath])
 
@@ -48,8 +53,6 @@ export const Navbar = () => {
 
         setTimeDubai(`${hours}:${minutes} ${timeFormat}`)
     }, 1000)
-
-    const hamburgerActive = () => {}
 
     return (
         <header className={styles.header}>
@@ -95,7 +98,7 @@ export const Navbar = () => {
 
                         <Tooltip
                             type="account"
-                            title="User"
+                            icon="user"
                             isVisible={userPopUp}
                             setIsVisible={setUserPopUp}
                         >
@@ -128,18 +131,14 @@ export const Navbar = () => {
                         </Tooltip>
                         <Button
                             type="nav_default_small"
-                            onClick={() => setFeedbackActive(true)}
+                            onClick={() => {
+                                setFeedbackActive(true)
+                                setNavActive(false)
+                            }}
                         >
                             Feedback
                         </Button>
                     </div>
-
-                    <Modal
-                        isVisible={feedbackActive}
-                        close={() => setFeedbackActive(false)}
-                    >
-                        <ContactForm />
-                    </Modal>
                 </div>
                 <div className={styles.navTime}>
                     <h2>{timeDubai}</h2>
@@ -158,6 +157,12 @@ export const Navbar = () => {
                     isActive={navActive}
                 />
             </div>
+            <Modal
+                isVisible={feedbackActive}
+                close={() => setFeedbackActive(false)}
+            >
+                <ContactForm />
+            </Modal>
         </header>
     )
 }

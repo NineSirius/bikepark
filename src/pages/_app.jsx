@@ -1,5 +1,6 @@
 import { Layout } from '@/containers/Layout'
 import '@/styles/globals.css'
+import '@/styles/icons.css'
 import { Montserrat } from 'next/font/google'
 
 const montserrat = Montserrat({

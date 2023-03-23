@@ -6,7 +6,7 @@ export const Modal = ({ children, isVisible, close }) => {
         <>
             <div className={clsx(styles.modal, isVisible && styles.active)}>
                 <span className={styles.close} onClick={close}>
-                    x
+                    <i className="icon-cross"></i>
                 </span>
                 {children}
             </div>
