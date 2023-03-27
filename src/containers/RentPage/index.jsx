@@ -5,6 +5,8 @@ import clsx from 'clsx'
 import { Select } from '@/components/UI/Select'
 import { Tooltip } from '@/components/UI/Tooltip'
 import { useState } from 'react'
+import { Switcher } from '@/components/UI/Switcher'
+import { CustomDateRange } from '@/components/UI/CustomDateRange'
 
 export const RentPage = () => {
     const [typeInfo, setTypeInfo] = useState(false)
@@ -71,6 +73,13 @@ export const RentPage = () => {
 
                     <div className={styles['filter-wrap']}>
                         <div className={styles['filter-item']}>
+                            <span className="caption">Тип велосипеда</span>
+                            <Switcher first="По дням" second="2 часа" />
+                        </div>
+                        <div className={styles['filter-item']}>
+                            <CustomDateRange />
+                        </div>
+                        <div className={styles['filter-item']}>
                             <span className="caption">Доставка</span>
                             <Select
                                 name="name"
@@ -80,7 +89,7 @@ export const RentPage = () => {
                     </div>
                 </div>
                 <div className="card-main">
-                    <span className='caption'>Тип велосипеда</span>
+                    <span className="caption">Тип велосипеда</span>
                 </div>
             </div>
         </div>

@@ -29,9 +29,11 @@ export const loginUser = (data) => {
 }
 
 export const getFullUserInfo = (token) => {
-    return strapFrontiApi.post('users/me', {
-        headers: {
-            authorization: `Bearer ${token}`,
-        },
-    })
+    return strapFrontiApi
+        .get('users/me?populate=*', {
+            headers: {
+                authorization: `Bearer ${token}`,
+            },
+        })
+        .json()
 }

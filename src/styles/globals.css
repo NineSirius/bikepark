@@ -17,6 +17,9 @@
     --text-color: #14233d;
     --bg-footer: #272934;
 
+    --link-color: var(--primary-color);
+    --link-hover-color: var(--primary-hover-color);
+
     --max-width: 1280px;
 
     --big-title-size: 4.375rem;
@@ -167,4 +170,3 @@ ul {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-

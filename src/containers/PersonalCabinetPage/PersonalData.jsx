@@ -29,7 +29,7 @@ export const PersonalData = ({ name, email, password, phone, delivery }) => {
                 <h4>{delivery}</h4>
             </div>
             <div className={styles['input-wrap']}>
-                <Button type="link">Изменить пароль</Button>
+                <Button type="primary-link">Изменить пароль</Button>
             </div>
         </div>
     )

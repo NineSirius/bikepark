@@ -3,7 +3,13 @@ import { Input } from '@/components/UI/Input'
 
 import styles from './Personal.module.css'
 
-export const PersonalDataEdit = ({ name, email, password, phone, delivery }) => {
+export const PersonalDataEdit = ({
+    name,
+    email,
+    password,
+    phone,
+    delivery,
+}) => {
     return (
         <div className={styles.form}>
             <div className={styles['input-wrap']}>
@@ -32,7 +38,7 @@ export const PersonalDataEdit = ({ name, email, password, phone, delivery }) => 
                 />
             </div>
             <div className={styles['input-wrap']}>
-                <Button type="link">Изменить пароль</Button>
+                <Button type="primary-link">Изменить пароль</Button>
             </div>
         </div>
     )

@@ -1,7 +1,6 @@
 .card-main-wrap {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     border-radius: 15px;
     gap: 35px;
 }
@@ -79,6 +78,10 @@
 
 .filter-wrap {
     margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    user-select: none;
 }
 
 .filter-item {
