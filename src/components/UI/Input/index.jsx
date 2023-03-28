@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import Button from '../Button'
 import styles from './style.module.css'
 
 export const Input = ({
@@ -7,20 +9,43 @@ export const Input = ({
     name,
     required,
     value,
+    defaultValue,
 }) => {
+    const [showPassword, setShowPassword] = useState(false)
     return (
         <>
             <label>
                 <div className={styles.inputWrap}>
                     <input
-                        type={type}
+                        type={showPassword ? 'text' : type}
                         name={name && name}
                         onChange={onChange && onChange}
                         placeholder={placeholder}
                         required={required && required}
                         value={value && value}
+                        defaultValue={defaultValue && defaultValue}
                     />
-                    <div></div>
+                    {type === 'password' && (
+                        <>
+                            {showPassword ? (
+                                <Button
+                                    type="icon"
+                                    btnType="button"
+                                    onClick={() => setShowPassword(false)}
+                                >
+                                    <i className="icon-hide-eye"></i>
+                                </Button>
+                            ) : (
+                                <Button
+                                    type="icon"
+                                    btnType="button"
+                                    onClick={() => setShowPassword(true)}
+                                >
+                                    <i className="icon-eye"></i>
+                                </Button>
+                            )}
+                        </>
+                    )}
                 </div>
             </label>
         </>

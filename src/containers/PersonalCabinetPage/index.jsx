@@ -5,9 +5,9 @@ import Link from 'next/link'
 import Button from '@/components/UI/Button'
 import { useRouter } from 'next/router'
 import { PersonalData } from './PersonalData'
-import { PersonalDataEdit } from './PersonalDataEdit'
 import { useEffect, useState } from 'react'
 import { getFullUserInfo } from '@/api/requests'
+import { Loader } from '@/components/UI/Loader'
 
 export const PersonalCabinetPage = () => {
     const { asPath } = useRouter()
@@ -16,6 +16,8 @@ export const PersonalCabinetPage = () => {
 
     const [pageStatus, setPageStatus] = useState('loading')
 
+    const [personalDataStatus, setPersonalDataStatus] = useState('read')
+
     useEffect(() => {
         if (localStorage.getItem('user')) {
             getFullUserInfo(localStorage.getItem('user'))
@@ -23,13 +25,14 @@ export const PersonalCabinetPage = () => {
                     setUserData(resp)
                     setPageStatus('loaded')
                 })
-                .catch(setPageStatus('unauthorited'))
+                .catch((err) => setPageStatus('unauthorited'))
         } else {
             setUserData(false)
         }
     }, [])
 
     if (pageStatus === 'loading') {
+        return <Loader />
     }
     if (pageStatus === 'unauthorited') {
         return (
@@ -46,12 +49,10 @@ export const PersonalCabinetPage = () => {
                 <div className="card">
                     <h1 className="mainTitle">Личный кабинет</h1>
                     <Tabs>
-                        <TabList className={styles.titles}>
-                            <Tab className={styles.title}>Текущие заказы</Tab>
-                            <Tab className={styles.title}>
-                                Выполненные заказы
-                            </Tab>
-                            <Tab className={styles.title}>Личные данные</Tab>
+                        <TabList className={styles['tab-list']}>
+                            <Tab className={styles.tab}>Текущие заказы</Tab>
+                            <Tab className={styles.tab}>Выполненные заказы</Tab>
+                            <Tab className={styles.tab}>Личные данные</Tab>
                         </TabList>
 
                         <TabPanel>
@@ -61,36 +62,22 @@ export const PersonalCabinetPage = () => {
                             <h2>Content 2</h2>
                         </TabPanel>
                         <TabPanel>
-                            <form>
-                                {asPath === '/personal-cabinet?edit' ? (
-                                    <PersonalDataEdit
-                                        name={userData.username}
-                                        email={userData.email}
-                                        phone={userData.phone}
-                                        delivery={userData.address}
-                                        password="********"
-                                    />
-                                ) : (
-                                    <PersonalData
-                                        name={userData.username}
-                                        email={userData.email}
-                                        phone={userData.phone}
-                                        delivery={userData.address}
-                                        password="********"
-                                    />
-                                )}
-                                <div className={styles.btn}>
-                                    {asPath === '/personal-cabintet?edit' ? (
-                                        <Button btnType="button" type="default">
-                                            Сохранить
-                                        </Button>
-                                    ) : (
-                                        <Button btnType="button" type="default">
-                                            Редактировать
-                                        </Button>
-                                    )}
-                                </div>
-                            </form>
+                            <PersonalData
+                                name={userData.username}
+                                email={userData.email}
+                                phone={userData.phone}
+                                delivery={
+                                    userData.delivery === null
+                                        ? 'Не указан'
+                                        : userData.delivery
+                                }
+                                password="********"
+                                status={personalDataStatus}
+                                changeStatus={setPersonalDataStatus}
+                                userID={userData.id}
+                                setUserData={setUserData}
+                                userData={userData}
+                            />
                         </TabPanel>
                     </Tabs>
                 </div>

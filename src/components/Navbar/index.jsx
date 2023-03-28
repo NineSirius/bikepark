@@ -11,6 +11,7 @@ import { Hamburger } from '../Hamburger'
 import { ContactForm } from './ContactForm'
 import { Modal } from '../UI/Modal'
 import { AuthForm } from '@/containers/AuthForm'
+import { getFullUserInfo } from '@/api/requests'
 
 export const Navbar = () => {
     const { asPath } = useRouter()
@@ -21,11 +22,16 @@ export const Navbar = () => {
     const [navActive, setNavActive] = useState(false)
     const [authActive, setAuthActive] = useState(false)
 
+    const [userInfo, setUserInfo] = useState({})
+
     const [userJWT, setUserJWT] = useState()
 
     useEffect(() => {
         if (localStorage.getItem('user')) {
             setUserJWT(localStorage.getItem('user'))
+            getFullUserInfo(localStorage.getItem('user')).then((resp) =>
+                setUserInfo(resp),
+            )
         }
     }, [])
 
@@ -107,6 +113,11 @@ export const Navbar = () => {
                                     <Link href="/personal-cabinet">
                                         Личный кабинет
                                     </Link>
+                                    {userInfo?.role?.name === 'Admin' && (
+                                        <Link href="/order-management">
+                                            Управление заказми
+                                        </Link>
+                                    )}
                                     <Button
                                         type="link"
                                         onClick={() => {

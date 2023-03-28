@@ -1,4 +1,6 @@
 .inputWrap {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     background: #ffffff;
     border: 1px solid #dde3eb;

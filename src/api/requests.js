@@ -1,4 +1,5 @@
 import ky from 'ky'
+import { headers } from '../../next.config'
 
 // const strapBackiApi = got.extend({
 //     prefixUrl: 'http://localhost:1337/api',
@@ -33,6 +34,32 @@ export const getFullUserInfo = (token) => {
         .get('users/me?populate=*', {
             headers: {
                 authorization: `Bearer ${token}`,
+            },
+        })
+        .json()
+}
+
+export const changePassword = async (token, passwordData) => {
+    return await strapFrontiApi
+        .post('auth/change-password', {
+            json: {
+                currentPassword: passwordData.password,
+                password: passwordData.newPassword,
+                passwordConfirmation: passwordData.passwordConfirmation,
+            },
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        .json()
+}
+
+export const editUserInfo = async (token, id, data) => {
+    return await strapFrontiApi
+        .put(`users/${id}`, {
+            json: data,
+            headers: {
+                Authorization: `Bearer ${token}`,
             },
         })
         .json()

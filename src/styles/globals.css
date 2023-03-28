@@ -17,6 +17,9 @@
     --text-color: #14233d;
     --bg-footer: #272934;
 
+    --danger-color: red;
+    --success-color: green;
+
     --link-color: var(--primary-color);
     --link-hover-color: var(--primary-hover-color);
 
@@ -135,6 +138,25 @@ ul {
     overflow: hidden;
 }
 
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error {
+    color: var(--danger-color);
+}
+
+.success {
+    color: var(--success-color);
+}
 @media (max-width: 1000px) {
     .card,
     .card-main {

@@ -168,7 +168,7 @@ export const AuthForm = ({ closeAuth }) => {
                                     placeholder="Введите имя"
                                     name="username"
                                     onChange={registerChange}
-                                    />
+                                />
                             </div>
                             <div className={styles['input-wrap']}>
                                 <span className="caption">Номер телефона*</span>

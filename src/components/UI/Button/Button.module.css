@@ -12,6 +12,10 @@
     font-family: inherit;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
 .default,
 .default_fill {
     padding: 20px 0;
@@ -70,6 +74,7 @@
     font-weight: 500;
     font-size: 1rem;
     color: var(--text-color);
+    align-self: flex-start;
 }
 
 .link:hover {
@@ -88,8 +93,15 @@
     color: var(--link-hover-color);
 }
 
-.link:hover {
+.icon {
+    background: unset;
+    color: var(--primary-color);
+    font-size: 40px;
+}
+
+.icon:hover {
     cursor: pointer;
+    color: var(--primary-hover-color);
 }
 
 @media (max-width: 768px) {
