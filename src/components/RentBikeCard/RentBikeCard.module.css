@@ -1,0 +1,31 @@
+.bike{
+    width: 259px;
+    height: 137px;
+    position: absolute;
+    top: -64px;
+    
+
+}
+.textcard{
+/*font-family: 'Montserrat' ; */
+    background: #fff;
+    
+    
+font-size: 11px;
+    padding: 54px 24px 61px ;
+    border-radius: 15px;
+    
+}
+
+.textprice{
+    color: #297FFF;
+    padding: 22px 1px;
+  
+    font-weight: 800;
+
+    
+}
+.icons{
+    display: flex;
+    gap: 30px;
+}
