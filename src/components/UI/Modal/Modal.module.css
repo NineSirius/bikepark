@@ -1,35 +1,35 @@
 .modal {
-    max-width: 100vw;
-    width: max-content;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  max-width: 100vw;
+  width: max-content;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 40px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 40px;
 
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.2s;
-    z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  z-index: 99;
 }
 
 .modal.active {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .close {
-    font-size: 32px;
-    position: absolute;
-    top: 0;
-    right: -60px;
-    color: #fff;
+  font-size: 32px;
+  position: absolute;
+  top: 0;
+  right: -60px;
+  color: #fff;
 }
 
 .close:hover {
-    cursor: pointer;
-    color: #ccc;
+  cursor: pointer;
+  color: #ccc;
 }
