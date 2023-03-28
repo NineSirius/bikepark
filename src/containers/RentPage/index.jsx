@@ -7,6 +7,7 @@ import { Tooltip } from '@/components/UI/Tooltip'
 import { useState } from 'react'
 import { Switcher } from '@/components/UI/Switcher'
 import { CustomDateRange } from '@/components/UI/CustomDateRange'
+import { RentBikeCard } from '@/components/RentBikeCard/RentBikeCard'
 
 export const RentPage = () => {
     const [typeInfo, setTypeInfo] = useState(false)
@@ -90,6 +91,12 @@ export const RentPage = () => {
                 </div>
                 <div className="card-main">
                     <span className="caption">Тип велосипеда</span>
+
+                    <RentBikeCard
+                        title="Аллюминий"
+                        image="/img/bike.png"
+                        price="90"
+                    />
                 </div>
             </div>
         </div>
