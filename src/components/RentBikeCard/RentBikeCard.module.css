@@ -1,18 +1,23 @@
+
+.cardBlock {
+    position: relative;
+    max-width: 260px;
+    padding: 50px 0 0 0;
+    margin-top: 120px;
+}
 .bike{
-    width: 259px;
-    height: 137px;
+    width: 100%;
+    height: auto;
     position: absolute;
-    top: -64px;
+    top: -70px;
     
 
 }
 .textcard{
 /*font-family: 'Montserrat' ; */
-    background: #fff;
-    
-    
-font-size: 11px;
-    padding: 54px 24px 61px ;
+    background: #ffffff;
+font-size: 0.6875rem;
+    padding: 24px 24px 21px ;
     border-radius: 15px;
     
 }
@@ -20,12 +25,22 @@ font-size: 11px;
 .textprice{
     color: #297FFF;
     padding: 22px 1px;
-  
+  display: flex;
+  align-items: center;
     font-weight: 800;
 
     
 }
-.icons{
+.card-info{
     display: flex;
-    gap: 30px;
+    align-items: center;
+
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

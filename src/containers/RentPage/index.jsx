@@ -4,13 +4,13 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { Select } from '@/components/UI/Select'
 import { Tooltip } from '@/components/UI/Tooltip'
-import { useState } from 'react'
+
 import { Switcher } from '@/components/UI/Switcher'
 import { CustomDateRange } from '@/components/UI/CustomDateRange'
 import { RentBikeCard } from '@/components/RentBikeCard/RentBikeCard'
 
 export const RentPage = () => {
-    const [typeInfo, setTypeInfo] = useState(false)
+    
     return (
         <div className="container">
             <div className={styles['card-main-wrap']}>
