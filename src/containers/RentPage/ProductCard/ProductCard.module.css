@@ -1,0 +1,89 @@
+.card {
+  max-width: 260px;
+  background: #fff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 15px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header .size {
+  font-weight: 800;
+  font-size: 1.125rem;
+  color: #abb1c5;
+}
+
+.card-header .brand {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--captions-color);
+  text-transform: uppercase;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 130px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--text-color);
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.25rem;
+
+  color: var(--primary-color);
+}
+
+.bike-content {
+  display: flex;
+  gap: 40px;
+}
+
+.bike-images {
+  width: 50%;
+}
+
+.bike-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.bike-info-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list-item {
+  width: 100%;
+  display: flex;
+}
+
+.list-item span {
+  flex-basis: 50%;
+}
+.list-item .answer {
+  flex-basis: 50%;
+}
