@@ -14,6 +14,7 @@ import { Loader } from "@/components/UI/Loader";
 import { ProductCard } from "./ProductCard";
 import { useRouter } from "next/router";
 import { MakeOrderPage } from "../MakeOrderPage";
+import { SizeTable } from "@/components/SizeTable";
 
 export const RentPage = () => {
   const [bikeTypes, setBikeTypes] = useState([]);
@@ -27,20 +28,12 @@ export const RentPage = () => {
 
   const [orderInfo, setOrderInfo] = useState({
     rentType: "",
-    startDate: "",
-    endDate: "",
     delivery: "",
+    rentData: "",
   });
 
   const changeToOrderPage = () => {
-    setOrderInfo({
-      rentType: "По дням",
-      products: [],
-      startDate: "",
-      endDate: "",
-      delivery: "По адресу",
-    });
-    // setPageStatus("makeOrder");
+    setPageStatus("makeOrder");
   };
 
   const [productsStatus, setProductsStatus] = useState("pending");
@@ -166,14 +159,22 @@ export const RentPage = () => {
               <div className={styles["filter-wrap"]}>
                 <div className={styles["filter-item"]}>
                   <span className="caption">Тип велосипеда</span>
-                  <Switcher first="По дням" second="2 часа" />
+                  <Switcher
+                    first="По дням"
+                    second="2 часа"
+                    setOrderInfo={setOrderInfo}
+                  />
                 </div>
                 <div className={styles["filter-item"]}>
-                  <CustomDateRange />
+                  <CustomDateRange changeOrderInfo={setOrderInfo} />
                 </div>
                 <div className={styles["filter-item"]}>
                   <span className="caption">Доставка</span>
-                  <Select name="name" options={["По адресу", "Самовызов"]} />
+                  <Select
+                    name="delivery"
+                    options={["По адресу", "Самовызов"]}
+                    setOrderInfo={setOrderInfo}
+                  />
                 </div>
               </div>
             </div>
@@ -230,6 +231,8 @@ export const RentPage = () => {
                   </div>
                 </div>
 
+                <SizeTable />
+
                 <div className={styles["products-list"]}>
                   {products.map((item) => {
                     return (
@@ -258,6 +261,8 @@ export const RentPage = () => {
   }
 
   if (pageStatus === "makeOrder") {
-    return <MakeOrderPage orderInfo={orderInfo} />;
+    return (
+      <MakeOrderPage orderInfo={{ ...orderInfo, products: [...basket] }} />
+    );
   }
 };

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Select.module.css";
 
-export const Select = ({ name, options }) => {
+export const Select = ({ name, options, setOrderInfo }) => {
   const [activeOption, setActiveOption] = useState("");
 
   const [optionList, setOptionList] = useState([]);
@@ -19,6 +19,17 @@ export const Select = ({ name, options }) => {
   useEffect(() => {
     document.addEventListener("click", hideOnClickOutside, true);
   }, []);
+
+  useEffect(() => {
+    if (name === "delivery") {
+      setOrderInfo((data) => {
+        return {
+          ...data,
+          delivery: activeOption,
+        };
+      });
+    }
+  }, [activeOption, name, setOrderInfo]);
 
   const changeSelect = (e) => {
     setActiveOption(e.target.value);

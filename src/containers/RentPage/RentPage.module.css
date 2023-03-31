@@ -111,6 +111,7 @@
 .products-filter {
   display: flex;
   gap: 40px;
+  margin-bottom: 20px;
 }
 
 .products-list {

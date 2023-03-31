@@ -6,7 +6,7 @@ import { headers } from "../../next.config";
 // })
 
 const strapFrontiApi = ky.create({
-  prefixUrl: "http://localhost:1337/api/",
+  prefixUrl: "https://bike-park-api.onrender.com/api/",
 });
 
 export const postQuestionRequest = (question) => {
@@ -86,3 +86,7 @@ export const getProducts = async (type) => {
 export const getFullBikeInfo = async (id) => {
   return strapFrontiApi.get(`products/${id}?populate=*`).json();
 };
+
+// export const getBikeInfoById = async (id) => {
+//   return strapFrontiApi.get(`products/${id}?populate=*&filters[id][$eq]=${id}`);
+// };
