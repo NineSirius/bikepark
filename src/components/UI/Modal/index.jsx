@@ -17,7 +17,7 @@ export const Modal = ({ children, isVisible, close }) => {
         <span className={styles.close} onClick={close}>
           <i className="icon-cross"></i>
         </span>
-        {children}
+        <div className={styles["modal-content"]}>{children}</div>
       </div>
 
       <div

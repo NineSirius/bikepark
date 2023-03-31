@@ -33,6 +33,10 @@
   --link-size: 1rem;
 }
 
+body {
+  height: 100%;
+}
+
 a {
   color: var(--primary-color);
   font-size: 16px;
@@ -162,7 +166,21 @@ ul {
   overflow: hidden;
 }
 
+.d-flex {
+  display: flex;
+}
 
+.gap {
+  gap: 20px;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.jusify-content-center {
+  justify-content: center;
+}
 
 @media (max-width: 1000px) {
   .card,

@@ -8,8 +8,19 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./ProductCard.module.css";
 
-export const ProductCard = ({ name, size, brand, price, previewImg, id }) => {
+export const ProductCard = ({
+  name,
+  size,
+  brand,
+  price,
+  previewImg,
+  id,
+  addToBasket,
+  status,
+}) => {
   const [fullBikeInfoStatus, setFullBikeInfoStatus] = useState(false);
+
+  console.log(status);
 
   const [requestStatus, setRequestStatus] = useState("loading");
 
@@ -49,7 +60,13 @@ export const ProductCard = ({ name, size, brand, price, previewImg, id }) => {
           </h4>
           <span className={styles.price}>{price} AED/день</span>
 
-          <CheckBox type="outline-btn" />
+          {status ? (
+            <CheckBox type="outline-btn" onChange={addToBasket} />
+          ) : (
+            <Button type="default_small" disabled={true}>
+              Занят
+            </Button>
+          )}
         </div>
       </div>
 

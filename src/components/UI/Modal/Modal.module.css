@@ -1,13 +1,13 @@
 .modal {
   max-width: 60vw;
-  max-height: 100vh;
+
   width: max-content;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   background: #ffffff;
+
   border-radius: 15px;
   padding: 40px;
 
@@ -15,9 +15,21 @@
   opacity: 0;
   transition: 0.2s;
   z-index: 99;
+}
 
-  overflow-y: auto;
+.modal-content {
+  max-height: calc(100vh - 110px);
+  width: 100%;
   overflow-x: hidden;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
+  background: var(--borders-color);
+  width: 5px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--captions-color);
 }
 
 .modal.active {
@@ -29,7 +41,7 @@
   font-size: 32px;
   position: absolute;
   top: 0;
-  right: -60px;
+  right: -50px;
   color: #fff;
 }
 
