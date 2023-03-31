@@ -1,30 +1,45 @@
-.checkbox input[type='checkbox'] {
-    display: none;
+.checkbox input[type="checkbox"] {
+  display: none;
 }
 
 .default {
-    display: flex;
-    border: 1px solid var(--borders-color);
-    background: #fff;
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    transition: 0.2s;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  border: 1px solid var(--borders-color);
+  background: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  transition: 0.2s;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkbox:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.checkbox input[type='checkbox']:checked + .default {
-    background: var(--primary-color);
-    border: unset;
+.checkbox input[type="checkbox"]:checked + .default,
+.checkbox input[type="checkbox"]:checked + .outline-btn {
+  background: var(--primary-color);
+  border: unset;
+  color: #fff;
 }
 
-.checkbox input[type='checkbox']:checked + .default::before {
-    content: '✓';
-    color: #fff;
-    font-size: 20px;
+.card-btn {
+  color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+}
+
+.checkbox i[class="icon-check"] {
+  color: #fff;
+}
+
+.outline-btn {
+  border: 1px solid var(--primary-color);
+  width: 100%;
+  color: var(--primary-color);
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 1rem;
 }

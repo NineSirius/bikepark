@@ -1,58 +1,62 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --primary-color: #297fff;
-    --primary-hover-color: #005eff;
+  --primary-color: #297fff;
+  --primary-hover-color: #005eff;
 
-    --bg-color: #f2f4f7;
-    --borders-color: #dde3eb;
-    --captions-color: #abb1c5;
-    --text-box-color: #737b98;
-    --text-color: #14233d;
-    --bg-footer: #272934;
+  --bg-color: #f2f4f7;
+  --borders-color: #dde3eb;
+  --captions-color: #abb1c5;
+  --text-box-color: #737b98;
+  --text-color: #14233d;
+  --bg-footer: #272934;
 
-    --danger-color: red;
-    --success-color: green;
+  --danger-color: red;
+  --success-color: green;
 
-    --link-color: var(--primary-color);
-    --link-hover-color: var(--primary-hover-color);
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-hover-color);
 
-    --max-width: 1280px;
+  --max-width: 1280px;
 
-    --big-title-size: 4.375rem;
-    --medium-title-size: 3.75rem;
-    --subtitle-size: 2.5rem;
-    --main-text-size: 1.875rem;
-    --caption-size: 1rem;
-    --link-size: 1rem;
+  --big-title-size: 4.375rem;
+  --medium-title-size: 3.75rem;
+  --subtitle-size: 2.5rem;
+  --main-text-size: 1.875rem;
+  --caption-size: 1rem;
+  --link-size: 1rem;
+}
+
+body {
+  height: 100%;
 }
 
 a {
-    color: var(--primary-color);
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 a:hover {
-    color: var(--primary-hover-color);
-    text-decoration: underline;
+  color: var(--primary-hover-color);
+  text-decoration: underline;
 }
 p {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 140%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
 
-    color: var(--text-color);
+  color: var(--text-color);
 }
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 h1,
@@ -61,134 +65,154 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 10px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 10px 20px;
 }
 
 .main {
-    padding: 40px 0 100px 0;
+  padding: 40px 0 100px 0;
 }
 
 .card,
 .card-main {
-    position: relative;
-    background: #f2f4f7;
-    border-radius: 20px;
-    padding: 50px 40px;
+  position: relative;
+  background: #f2f4f7;
+  border-radius: 20px;
+  padding: 50px 40px;
 }
 
 .card-main:first-child::before {
-    content: unset;
+  content: unset;
 }
 
 .card-main::before {
-    content: '';
-    position: absolute;
-    top: -35px;
-    display: flex;
-    width: 75px;
-    height: 35px;
-    background: url('/img/main-card-top.svg');
+  content: "";
+  position: absolute;
+  top: -35px;
+  display: flex;
+  width: 75px;
+  height: 35px;
+  background: url("/img/main-card-top.svg");
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.2s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .overlay.active {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .title {
-    font-size: 3rem;
-    color: var(--text-color);
-    margin-bottom: 30px;
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
 }
 
 .subtitle {
-    margin-bottom: 1.25rem;
-    font-size: 18px;
-    color: var(--text-color);
+  margin-bottom: 1.25rem;
+  font-size: 18px;
+  color: var(--text-color);
 }
 
 .caption {
-    font-size: var(--caption-size);
-    color: var(--captions-color);
+  font-size: var(--caption-size);
+  color: var(--captions-color);
 }
 
 .fixed {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .form-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .form-input-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .error {
-    color: var(--danger-color);
+  color: var(--danger-color);
 }
 
 .success {
-    color: var(--success-color);
+  color: var(--success-color);
 }
+
+.fixed {
+  overflow: hidden;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.gap {
+  gap: 20px;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.jusify-content-center {
+  justify-content: center;
+}
+
 @media (max-width: 1000px) {
-    .card,
-    .card-main {
-        padding: 50px 20px;
-    }
+  .card,
+  .card-main {
+    padding: 50px 20px;
+  }
 }
 
 @font-face {
-    font-family: 'bikepark-icons';
-    src: url('/fonts/bikepark-icons.eot?hoiy2f');
-    src: url('/fonts/bikepark-icons.eot?hoiy2f#iefix')
-            format('embedded-opentype'),
-        url('/fonts/bikepark-icons.ttf?hoiy2f') format('truetype'),
-        url('/fonts/bikepark-icons.woff?hoiy2f') format('woff'),
-        url('/fonts/bikepark-icons.svg?hoiy2f#bikepark-icons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+  font-family: "bikepark-icons";
+  src: url("/fonts/bikepark-icons.eot?hoiy2f");
+  src: url("/fonts/bikepark-icons.eot?hoiy2f#iefix") format("embedded-opentype"),
+    url("/fonts/bikepark-icons.ttf?hoiy2f") format("truetype"),
+    url("/fonts/bikepark-icons.woff?hoiy2f") format("woff"),
+    url("/fonts/bikepark-icons.svg?hoiy2f#bikepark-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
-[class^='icon-'],
-[class*=' icon-'] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'bikepark-icons' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "bikepark-icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
