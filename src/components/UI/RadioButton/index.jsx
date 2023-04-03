@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./RadioButton.module.css";
 import clsx from "clsx";
 
@@ -6,13 +6,21 @@ export const RadioButton = ({
   children,
   name,
   value,
-  defaultChecked,
   required,
+  setFullOrderInfo,
+  payment_method,
+  defaultChecked,
 }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const isActive = value === payment_method;
 
   const change = (e) => {
-    setIsChecked(e.target.checked);
+    console.log(value, payment_method);
+    setFullOrderInfo((fullOrderInfo) => {
+      return {
+        ...fullOrderInfo,
+        payment_method: e.target.value,
+      };
+    });
   };
 
   return (
@@ -23,12 +31,14 @@ export const RadioButton = ({
             type="radio"
             name={name && name}
             onChange={change}
-            checked={isChecked}
+            checked={isActive}
             value={value && value}
-            defaultChecked={defaultChecked && defaultChecked}
             required={required && required}
+            defaultChecked={defaultChecked}
           />
-          <span className={clsx(styles.radio)}></span>
+          <span
+            className={clsx(styles.radio, isActive && styles.active)}
+          ></span>
           <div className={styles["radio-inner-content"]}>{children}</div>
         </div>
       </div>

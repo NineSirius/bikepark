@@ -41,9 +41,13 @@ export const CustomDateRange = ({ changeOrderInfo }) => {
   useEffect(() => {
     changeOrderInfo((data) => {
       console.log(data);
-      return { ...data, rentData: { ...range[0] } };
+      return {
+        ...data,
+        startDate: range[0].startDate,
+        endDate: range[0].endDate,
+      };
     });
-  }, [range]);
+  }, [changeOrderInfo, range]);
 
   return (
     <div className={styles["calendar-wrap"]}>

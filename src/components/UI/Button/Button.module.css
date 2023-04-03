@@ -17,7 +17,8 @@
 }
 
 .default,
-.default_fill {
+.default_fill,
+.default_outline {
   padding: 20px 0;
   min-width: 260px;
 }
@@ -67,6 +68,17 @@
   background: var(--primary-color);
   color: #fff;
   border: 2px solid var(--primary-hover-color);
+}
+
+.default_outline {
+  background: unset;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.default_outline:hover {
+  background: var(--borders-color);
 }
 
 .link {

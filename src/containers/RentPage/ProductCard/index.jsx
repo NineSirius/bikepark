@@ -17,6 +17,7 @@ export const ProductCard = ({
   id,
   addToBasket,
   status,
+  basket,
 }) => {
   const [fullBikeInfoStatus, setFullBikeInfoStatus] = useState(false);
 
@@ -61,7 +62,11 @@ export const ProductCard = ({
           <span className={styles.price}>{price} AED/день</span>
 
           {status ? (
-            <CheckBox type="outline-btn" onChange={addToBasket} />
+            <CheckBox
+              type="outline-btn"
+              onChange={addToBasket}
+              checked={basket.includes(id)}
+            />
           ) : (
             <Button type="default_small" disabled={true}>
               Занят

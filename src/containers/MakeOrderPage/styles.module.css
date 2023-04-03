@@ -4,6 +4,16 @@
   justify-content: space-between;
 }
 
+.order-info--finished {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+
+.order-info--finished .order-info-item {
+  justify-content: space-between;
+}
+
 .order-info-item {
   display: flex;
   flex-direction: column;
@@ -16,6 +26,7 @@
   gap: 20px;
   margin-top: 40px;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 .price {
@@ -30,6 +41,15 @@
       minmax(50px, auto)
     );
   gap: 30px;
+}
+
+.bike-order-row--finished {
+  display: grid;
+  grid-template-columns: minmax(min-content, max-content) 2fr minmax(
+      min-content,
+      max-content
+    );
+  gap: 40px;
 }
 
 .hidden {
@@ -109,6 +129,35 @@
   width: 50%;
 }
 
+.submit-btn {
+  align-self: center;
+}
+
+.total-price-wrap {
+  display: flex;
+}
+
+.total-price {
+  margin: 40px 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.total-price-item {
+  justify-content: space-between;
+  gap: 80px;
+  display: flex;
+}
+
+.finished-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 40px;
+}
+
 @media (max-width: 850px) {
   .contact-form {
     flex-direction: column;
@@ -116,17 +165,38 @@
   .contact-form-item {
     width: 100%;
   }
+
+  .order-info--finished {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 670px) {
+  .finished-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .finished-buttons button {
+    width: 100%;
+  }
+
   .order-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
+  .order-info--finished {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .order-info-item {
     flex-basis: 50%;
+  }
+
+  .order-info--finished .order-info-item {
+    flex-basis: unset;
   }
 
   .info-price-wrap {
@@ -151,10 +221,28 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .bike-order-row {
+    grid-template-columns: minmax(max-content, 100px) minmax(300px, 300px) repeat(
+        4,
+        minmax(50px, auto)
+      );
+  }
 }
 
 @media (max-width: 460px) {
+  .bike-order-row {
+    grid-template-columns: minmax(max-content, 100px) minmax(200px, 200px) repeat(
+        4,
+        minmax(50px, auto)
+      );
+  }
+
   .order-info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .order-info--finished {
     grid-template-columns: repeat(1, 1fr);
   }
 

@@ -1,5 +1,6 @@
 .card {
-  max-width: 260px;
+  /* max-width: 260px; */
+  width: 100%;
   background: #fff;
   padding: 15px;
   display: flex;
@@ -54,6 +55,8 @@
   color: var(--primary-color);
 }
 
+/* modal */
+
 .bike-content {
   display: flex;
   gap: 40px;
@@ -61,6 +64,9 @@
 
 .bike-images {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .bike-info {
@@ -86,4 +92,28 @@
 }
 .list-item .answer {
   flex-basis: 50%;
+}
+
+@media (max-width: 1150px) {
+  .bike-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bike-images {
+    width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  .list-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .list-item span {
+    flex-basis: 100%;
+  }
+  .list-item .answer {
+    flex-basis: 100%;
+  }
 }

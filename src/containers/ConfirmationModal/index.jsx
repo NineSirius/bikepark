@@ -1,5 +1,6 @@
 import Button from "@/components/UI/Button";
 import { Modal } from "@/components/UI/Modal";
+import styles from "./confirmation.module.css";
 
 export const ConfirmationModal = ({
   title,
@@ -9,7 +10,7 @@ export const ConfirmationModal = ({
 }) => {
   return (
     <Modal isVisible={isVisible} close={() => setIsVisible(false)}>
-      <h4 className={styles["confirm-title"]}>{title}</h4>
+      <h2 className={styles["confirm-title"]}>{title}</h2>
       <div className={styles["confirm-controls"]}>
         <Button
           type="default_outline"

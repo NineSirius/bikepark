@@ -3,8 +3,8 @@
 }
 
 .custom-select {
-  max-width: 260px;
-  width: 260px;
+  /* max-width: 260px; */
+  width: 100%;
   position: relative;
 }
 

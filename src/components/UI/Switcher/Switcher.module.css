@@ -5,9 +5,9 @@
   padding: 5px;
   max-width: max-content;
 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   white-space: nowrap;
+  width: 100%;
 }
 
 .switch-btn {
@@ -30,4 +30,14 @@
 
 .switch-btn input {
   display: none;
+}
+
+@media (max-width: 1150px) {
+  .switcher {
+    max-width: 100%;
+  }
+
+  .switcher label {
+    width: 50%;
+  }
 }

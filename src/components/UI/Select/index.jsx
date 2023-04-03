@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Select.module.css";
 
-export const Select = ({ name, options, setOrderInfo }) => {
+export const Select = ({ name, options, setOrderInfo, className }) => {
   const [activeOption, setActiveOption] = useState("");
 
   const [optionList, setOptionList] = useState([]);
@@ -59,7 +59,9 @@ export const Select = ({ name, options, setOrderInfo }) => {
               })}
           </select>
 
-          <div className={styles["custom-select"]}>
+          <div
+            className={clsx(styles["custom-select"], className && className)}
+          >
             <div
               className={clsx(
                 styles.activeValue,

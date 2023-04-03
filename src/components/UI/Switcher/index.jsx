@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useEffect, useState } from "react";
 import styles from "./Switcher.module.css";
 
-export const Switcher = ({ first, second, setOrderInfo }) => {
+export const Switcher = ({ first, second, setOrderInfo, name }) => {
   const [firstIsChecked, setFirstIsChecked] = useState(true);
   const [secondIsChecked, setSecondIsChecked] = useState(false);
 
@@ -18,7 +18,7 @@ export const Switcher = ({ first, second, setOrderInfo }) => {
     setOrderInfo((data) => {
       return {
         ...data,
-        rentType: activeValue,
+        rent_type: activeValue,
       };
     });
   }, [
@@ -42,7 +42,7 @@ export const Switcher = ({ first, second, setOrderInfo }) => {
           >
             <input
               type="radio"
-              name="switcher"
+              name={name && name}
               value={first}
               onChange={() => {
                 setFirstIsChecked(true);
@@ -62,7 +62,7 @@ export const Switcher = ({ first, second, setOrderInfo }) => {
           >
             <input
               type="radio"
-              name="switcher"
+              name={name && name}
               value={second}
               onChange={() => {
                 setSecondIsChecked(true);

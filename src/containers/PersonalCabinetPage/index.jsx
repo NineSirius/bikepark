@@ -8,6 +8,7 @@ import { PersonalData } from "./PersonalData";
 import { useEffect, useState } from "react";
 import { getFullUserInfo } from "@/api/requests";
 import { Loader } from "@/components/UI/Loader";
+import { OrderList } from "./OrdersList";
 
 export const PersonalCabinetPage = () => {
   const router = useRouter();
@@ -63,7 +64,7 @@ export const PersonalCabinetPage = () => {
             </TabList>
 
             <TabPanel>
-              <h2>Content 1</h2>
+              <OrderList />
             </TabPanel>
             <TabPanel>
               <h2>Content 2</h2>

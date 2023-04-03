@@ -3,7 +3,6 @@ import styles from "./RentPage.module.css";
 import Image from "next/image";
 import clsx from "clsx";
 import { Select } from "@/components/UI/Select";
-import { Tooltip } from "@/components/UI/Tooltip";
 
 import { Switcher } from "@/components/UI/Switcher";
 import { CustomDateRange } from "@/components/UI/CustomDateRange";
@@ -12,7 +11,6 @@ import { useEffect, useState } from "react";
 import { getProducts, getTypes } from "@/api/requests";
 import { Loader } from "@/components/UI/Loader";
 import { ProductCard } from "./ProductCard";
-import { useRouter } from "next/router";
 import { MakeOrderPage } from "../MakeOrderPage";
 import { SizeTable } from "@/components/SizeTable";
 
@@ -27,9 +25,8 @@ export const RentPage = () => {
   }, []);
 
   const [orderInfo, setOrderInfo] = useState({
-    rentType: "",
+    rent_type: "",
     delivery: "",
-    rentData: "",
   });
 
   const changeToOrderPage = () => {
@@ -54,6 +51,7 @@ export const RentPage = () => {
       .then((resp) => {
         console.log(resp);
         setProducts(resp.data);
+
         setProductsStatus("loaded");
         // setOrderInfo((orderInfo) => {
         //   // const pr
@@ -79,7 +77,7 @@ export const RentPage = () => {
   };
 
   const addToBasket = (e, id) => {
-    if (e.target.checked) {
+    if (e.target.checked && basket) {
       setBasket((basket) => {
         return [...basket, id];
       });
@@ -158,10 +156,11 @@ export const RentPage = () => {
 
               <div className={styles["filter-wrap"]}>
                 <div className={styles["filter-item"]}>
-                  <span className="caption">Тип велосипеда</span>
+                  <span className="caption">Тип аренды</span>
                   <Switcher
                     first="По дням"
                     second="2 часа"
+                    name="rent_type"
                     setOrderInfo={setOrderInfo}
                   />
                 </div>
@@ -215,7 +214,7 @@ export const RentPage = () => {
                   <div className={styles["filter-item"]}>
                     <span className="caption">Бренд</span>
                     <Select
-                      name="name"
+                      name="brands"
                       options={[
                         "Все",
                         "Schwinn",
@@ -223,11 +222,16 @@ export const RentPage = () => {
                         "Airwings",
                         "Bobike",
                       ]}
+                      className={styles["filter-select"]}
                     />
                   </div>
                   <div className={styles["filter-item"]}>
                     <span className="caption">Размер рамы</span>
-                    <Select name="name" options={["Все", "Самовызов"]} />
+                    <Select
+                      name="name"
+                      options={["Все", "Самовызов"]}
+                      className={styles["filter-select"]}
+                    />
                   </div>
                 </div>
 
@@ -248,6 +252,7 @@ export const RentPage = () => {
                         id={item?.id}
                         addToBasket={(e) => addToBasket(e, item?.id)}
                         status={item?.attributes?.status}
+                        basket={basket}
                       />
                     );
                   })}
@@ -262,7 +267,11 @@ export const RentPage = () => {
 
   if (pageStatus === "makeOrder") {
     return (
-      <MakeOrderPage orderInfo={{ ...orderInfo, products: [...basket] }} />
+      <MakeOrderPage
+        orderInfo={{ ...orderInfo, products: [...basket] }}
+        setPageStatus={setPageStatus}
+        setBasket={setBasket}
+      />
     );
   }
 };

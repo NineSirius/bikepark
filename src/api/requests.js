@@ -87,6 +87,24 @@ export const getFullBikeInfo = async (id) => {
   return strapFrontiApi.get(`products/${id}?populate=*`).json();
 };
 
+export const sendOrder = async (data) => {
+  return strapFrontiApi
+    .post("orders?populate=*", {
+      json: {
+        data: data,
+      },
+    })
+    .json();
+};
+
+export const updateUserOrders = async (order, token) => {
+  return strapFrontiApi.put(`users/${order.customer.id}`, {
+    json: order,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
 // export const getBikeInfoById = async (id) => {
 //   return strapFrontiApi.get(`products/${id}?populate=*&filters[id][$eq]=${id}`);
 // };

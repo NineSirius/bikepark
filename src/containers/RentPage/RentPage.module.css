@@ -83,8 +83,8 @@
 
 .filter-wrap {
   margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 40px;
   user-select: none;
   -webkit-user-select: none;
@@ -138,6 +138,11 @@
   border-top: 1px solid var(--borders-color);
 }
 
+.filter-select {
+  max-width: 260px;
+  width: 260px;
+}
+
 .order-info-content {
   display: flex;
   align-items: center;
@@ -179,32 +184,48 @@
     overflow-y: visible;
   }
 
-  .filter-wrap {
-    flex-wrap: wrap;
-  }
-
-  .filter-item:nth-child(1) {
-    order: 1;
-    width: 50%;
-  }
-  .filter-item:nth-child(2) {
-    order: 3;
-    width: 50%;
-  }
-  .filter-item:nth-child(3) {
-    order: 2;
-    width: 50%;
-  }
-
   .products-list {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .products-list {
+    gap: 20px;
   }
 }
 
 @media (max-width: 1150px) {
   .card-title {
     font-size: 36px;
+  }
+
+  .products-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .filter-wrap {
+    margin-top: 70px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-item:nth-child(1) {
+    width: 100%;
+    order: 1;
+  }
+  .filter-item:nth-child(2) {
+    width: 100%;
+    grid-column: span 2;
+    order: 3;
+  }
+  .filter-item:nth-child(3) {
+    width: 100%;
+    order: 2;
+  }
+
+  .filter-item:nth-child(1) div,
+  .filter-item:nth-child(3) div {
+    width: 100%;
   }
 }
 @media (max-width: 1100px) {
@@ -239,6 +260,10 @@
 
   .info {
     padding: 0 30px 10px 30px;
+  }
+
+  .products-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -281,5 +306,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .filter-wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .filter-item:nth-child(2) {
+    grid-column: unset;
+  }
+
+  .products-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .order-info-content {
+    flex-direction: column;
+    justify-content: unset;
+    gap: 10px;
+  }
+
+  .order-info-content button {
+    width: 100%;
   }
 }

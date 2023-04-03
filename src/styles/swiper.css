@@ -47,3 +47,11 @@
 .swiper-slide.swiper-slide-thumb-active {
   opacity: 1;
 }
+
+/* @media (max-width: 1150px) {
+  .swiper-slide {
+    max-width: 25% !important;
+    max-height: 125px !important;
+    height: auto;
+  }
+} */

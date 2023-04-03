@@ -12,6 +12,7 @@ import { ContactForm } from "./ContactForm";
 import { Modal } from "../UI/Modal";
 import { AuthForm } from "@/containers/AuthForm";
 import { getFullUserInfo } from "@/api/requests";
+import { ConfirmationModal } from "@/containers/ConfirmationModal";
 
 export const Navbar = () => {
   const { asPath } = useRouter();
@@ -21,6 +22,7 @@ export const Navbar = () => {
   const [timeDubai, setTimeDubai] = useState("0:00 AM");
   const [navActive, setNavActive] = useState(false);
   const [authActive, setAuthActive] = useState(false);
+  const [logOutConfirmation, setLogOutConfirmation] = useState(false);
 
   const [userInfo, setUserInfo] = useState({});
 
@@ -112,10 +114,7 @@ export const Navbar = () => {
                   )}
                   <Button
                     type="link"
-                    onClick={() => {
-                      localStorage.removeItem("user");
-                      setUserJWT(null);
-                    }}
+                    onClick={() => setLogOutConfirmation(true)}
                   >
                     Выйти
                   </Button>
@@ -151,6 +150,16 @@ export const Navbar = () => {
         <Modal isVisible={authActive} close={() => setAuthActive(false)}>
           <AuthForm closeAuth={() => setAuthActive(false)} />
         </Modal>
+
+        <ConfirmationModal
+          title="Вы действительно хотите выйти"
+          isVisible={logOutConfirmation}
+          setIsVisible={setLogOutConfirmation}
+          isSuccess={() => {
+            localStorage.removeItem("user");
+            setUserJWT(null);
+          }}
+        />
 
         <Hamburger
           onClick={() => setNavActive((navActive) => !navActive)}

@@ -1,0 +1,24 @@
+.confirm-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.confirm-controls {
+  display: flex;
+  margin-top: 40px;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 620px) {
+  .confirm-controls {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .confirm-controls button {
+    width: 100%;
+  }
+}

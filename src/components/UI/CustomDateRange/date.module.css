@@ -13,6 +13,7 @@
 }
 
 .select-date-item input {
+  width: 100%;
   background: #ffffff;
   border: 1px solid #dde3eb;
   border-radius: 15px;
@@ -40,9 +41,19 @@
   transform: translate(-50%, 0);
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1150px) {
+  .select-date-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
   .calendar-wrap {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: unset;
+    flex-direction: column;
+  }
+  .select-date-item {
+    width: 100%;
   }
 }
