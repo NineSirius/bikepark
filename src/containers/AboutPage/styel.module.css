@@ -19,8 +19,8 @@
 }
 
 .cards {
-  width: 360px;
-  height: 301px;
+  max-width: 360px;
+  min-height: 301px;
   background: #fff;
   border-radius: 15px;
   padding: 20px;
