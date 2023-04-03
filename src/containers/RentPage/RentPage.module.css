@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  gap: 35px;
+  overflow: hidden;
 }
 
 .card-title {
@@ -69,6 +69,11 @@
   color: #14233d;
 }
 
+/* .info-price-wrap {
+  display: flex;
+  align-items: center;
+} */
+
 .info-price {
   font-weight: 700;
   font-size: 20px;
@@ -78,10 +83,11 @@
 
 .filter-wrap {
   margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
   user-select: none;
+  -webkit-user-select: none;
 }
 
 .filter-item {
@@ -116,8 +122,9 @@
 
 .products-list {
   margin-top: 40px;
-  display: flex;
   gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .order-info {
@@ -165,6 +172,33 @@
   .header-banner-item:nth-child(3) {
     background: url("/img/header-banner-item3.svg") no-repeat 100% / 100%;
     right: -60px;
+  }
+
+  .bike-types-wrap {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+
+  .filter-wrap {
+    flex-wrap: wrap;
+  }
+
+  .filter-item:nth-child(1) {
+    order: 1;
+    width: 50%;
+  }
+  .filter-item:nth-child(2) {
+    order: 3;
+    width: 50%;
+  }
+  .filter-item:nth-child(3) {
+    order: 2;
+    width: 50%;
+  }
+
+  .products-list {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 

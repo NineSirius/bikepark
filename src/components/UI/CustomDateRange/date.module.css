@@ -1,41 +1,48 @@
 .calendar-wrap {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
 
 .select-date-item {
-    width: max-content;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .select-date-item input {
-    background: #ffffff;
-    border: 1px solid #dde3eb;
-    border-radius: 15px;
-    padding: 20px;
+  background: #ffffff;
+  border: 1px solid #dde3eb;
+  border-radius: 15px;
+  padding: 20px;
 
-    font-weight: 500;
-    font-size: 1.125rem;
-    color: #14233d;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #14233d;
 }
 
 .calendar-item {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    z-index: 10;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.2s;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .calendar-item.active {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(-50%, 0);
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 1250px) {
+  .calendar-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

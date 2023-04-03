@@ -90,8 +90,13 @@ ul {
   padding: 50px 40px;
 }
 
+.card-main {
+  margin-top: 35px;
+}
+
 .card-main:first-child::before {
   content: unset;
+  margin: unset;
 }
 
 .card-main::before {
@@ -111,7 +116,7 @@ ul {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  z-index: 16;
   visibility: hidden;
   opacity: 0;
   transition: 0.2s;

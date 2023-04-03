@@ -117,6 +117,15 @@
   padding: 10px 0;
 }
 
+.back {
+  padding: 10px;
+  background: unset;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   .nav_default_small {
     width: 100%;

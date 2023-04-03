@@ -90,7 +90,7 @@ export const RentPage = () => {
     }
   };
 
-  const bookFromBasket = (e) => {};
+  //   const bookFromBasket = (e) => {};
 
   if (pageStatus === "home") {
     return (

@@ -1,32 +1,33 @@
 .switcher {
-    background: #ffffff;
-    border: 1px solid #dde3eb;
-    border-radius: 15px;
-    padding: 5px;
-    max-width: max-content;
+  background: #ffffff;
+  border: 1px solid #dde3eb;
+  border-radius: 15px;
+  padding: 5px;
+  max-width: max-content;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  white-space: nowrap;
 }
 
 .switch-btn {
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 1.125rem;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1.125rem;
 
-    padding: 13px 21px;
-    text-align: center;
+  padding: 13px 21px;
+  text-align: center;
 }
 
 .switch-btn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .switch-btn.active {
-    color: #ffffff;
-    background: #297fff;
+  color: #ffffff;
+  background: #297fff;
 }
 
 .switch-btn input {
-    display: none;
+  display: none;
 }
