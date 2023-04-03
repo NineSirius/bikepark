@@ -6,7 +6,7 @@ import { headers } from "../../next.config";
 // })
 
 const strapFrontiApi = ky.create({
-  prefixUrl: "http://localhost:1337/api",
+  prefixUrl: "https://bike-park-api.onrender.com/api",
 });
 
 export const postQuestionRequest = (question) => {
