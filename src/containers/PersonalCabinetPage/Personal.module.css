@@ -1,67 +1,89 @@
 .tab-list {
-    display: flex;
+  display: flex;
 }
 
 .tab-list .tab {
-    flex-basis: 50%;
-    font-weight: 600;
-    font-size: 18px;
-    text-align: center;
-    padding: 15px;
+  flex-basis: 50%;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  padding: 15px;
 
-    color: var(--text-color);
-    border-bottom: 1px solid var(--borders-color);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--borders-color);
 }
 
 .tab-list .tab:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-.tab-list .tab[aria-selected='true'] {
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
+.tab-list .tab[aria-selected="true"] {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .form {
-    margin-top: 33px;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 33px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .form-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex-grow: 1;
 }
 
 .form-password {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
 }
 
 .form-password .input-wrap:last-child {
-    height: 100%;
-    justify-content: center;
+  height: 100%;
+  justify-content: center;
 }
 
 .form-password button {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .input-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .linkPassword {
-    border-bottom: 1px solid var(--captions-color);
+  border-bottom: 1px solid var(--captions-color);
 }
-.linkPassword[aria-selected='true'] {
-    border-bottom: 1px solid var(--primary-color);
+.linkPassword[aria-selected="true"] {
+  border-bottom: 1px solid var(--primary-color);
 }
 .btn {
-    margin-top: 40px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .tab-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tab-list .tab[aria-selected="true"] {
+    border: unset;
+  }
+
+  .form-info {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
