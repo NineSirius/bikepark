@@ -1,0 +1,15 @@
+.error {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.error button {
+  align-self: center;
+}
+.error_text {
+
+  font-weight: 500;
+  font-size: 208px;
+}

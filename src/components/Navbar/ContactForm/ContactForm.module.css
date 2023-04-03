@@ -1,0 +1,21 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    margin-bottom: 35px;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.formCheck {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.check-title {
+    font-weight: 500;
+}

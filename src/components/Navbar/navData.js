@@ -12,7 +12,7 @@ export const navData = [
     {
         id: 3,
         title: 'Доставка',
-        path: '/delivery',
+        path: '/delivery/rules',
     },
     {
         id: 4,

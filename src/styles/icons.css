@@ -1,0 +1,30 @@
+.icon-question:before {
+    content: '\e900';
+}
+.icon-hide-eye:before {
+    content: '\e901';
+}
+.icon-eye:before {
+    content: '\e902';
+}
+.icon-arrow-down:before {
+    content: '\e903';
+}
+.icon-cross:before {
+    content: '\e904';
+}
+.icon-plus:before {
+    content: '\e905';
+}
+.icon-instagram:before {
+    content: '\e906';
+}
+.icon-facebook:before {
+    content: '\e907';
+}
+.icon-check:before {
+    content: '\e908';
+}
+.icon-user:before {
+    content: '\e909';
+}

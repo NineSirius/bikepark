@@ -1,0 +1,251 @@
+.card-main-wrap {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  gap: 35px;
+}
+
+.card-title {
+  font-size: 48px;
+  font-weight: 600;
+  flex-basis: 40%;
+}
+
+.header-banner {
+  display: flex;
+  align-items: center;
+  flex-basis: 60%;
+}
+
+.header-banner-item {
+  width: 100%;
+  height: auto;
+}
+
+.header-banner-item {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.header-banner-item img {
+  max-width: 145px;
+  transform: translateX(60%);
+  height: auto;
+}
+
+.header-banner-item:nth-child(1) {
+  background: url("/img/header-banner-item1.svg") no-repeat 100% / 100%;
+  right: 360px;
+}
+.header-banner-item:nth-child(2) {
+  background: url("/img/header-banner-item2.svg") no-repeat 100% / 100%;
+  right: 160px;
+}
+.header-banner-item:nth-child(3) {
+  background: url("/img/header-banner-item3.svg") no-repeat 100% / 100%;
+  right: -20px;
+}
+
+.header-banner-item:nth-child(3) img {
+  transform: translate(80%, 10px);
+}
+
+.info {
+  padding: 0 50px 15px 50px;
+}
+
+.info-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #14233d;
+}
+
+.info-price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #297fff;
+}
+
+.filter-wrap {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  user-select: none;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filter-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.bike-types-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 10px;
+}
+
+.find-btn {
+  margin-top: 30px;
+  display: inline-flex;
+  align-self: center;
+}
+
+.products-filter {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.products-list {
+  margin-top: 40px;
+  display: flex;
+  gap: 40px;
+}
+
+.order-info {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background: #fff;
+  padding: 10px 0;
+  border-top: 1px solid var(--borders-color);
+}
+
+.order-info-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1250px) {
+  .card-title {
+    font-size: 42px;
+  }
+
+  .info-title {
+    font-size: 16px;
+  }
+
+  .info-price {
+    font-size: 18px;
+  }
+
+  .header-banner-item img {
+    width: 40%;
+  }
+
+  .header-banner-item:nth-child(1) {
+    background: url("/img/header-banner-item1.svg") no-repeat 100% / 100%;
+    right: 320px;
+  }
+  .header-banner-item:nth-child(2) {
+    background: url("/img/header-banner-item2.svg") no-repeat 100% / 100%;
+    right: 130px;
+  }
+  .header-banner-item:nth-child(3) {
+    background: url("/img/header-banner-item3.svg") no-repeat 100% / 100%;
+    right: -60px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .card-title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 1100px) {
+  .card-title {
+    font-size: 36px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-banner-item {
+    top: 50px;
+    max-height: 150px;
+  }
+
+  .header-banner-item img {
+    width: 30%;
+  }
+
+  .header-banner-item:nth-child(1) {
+    background: url("/img/header-banner-item1.svg") no-repeat 0 / contain;
+    right: 170px;
+  }
+  .header-banner-item:nth-child(2) {
+    background: url("/img/header-banner-item2.svg") no-repeat 0 / contain;
+    right: 30px;
+  }
+  .header-banner-item:nth-child(3) {
+    background: url("/img/header-banner-item3.svg") no-repeat 0 / contain;
+    right: -120px;
+  }
+
+  .info {
+    padding: 0 30px 10px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-title {
+    display: none;
+  }
+
+  .header-banner-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-banner {
+    top: 0;
+  }
+
+  .header-banner-item:nth-child(1) {
+    background: #d7e6ff;
+    right: 170px;
+  }
+  .header-banner-item:nth-child(2) {
+    background: #b9d5ff;
+    right: 30px;
+  }
+  .header-banner-item:nth-child(3) {
+    background: #a5c7fa;
+    right: -120px;
+  }
+
+  .header-banner-item img {
+    width: 70%;
+    transform: unset !important;
+  }
+
+  .header-banner-item {
+    flex-basis: 33%;
+    position: unset;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,11 @@
+.order-info {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

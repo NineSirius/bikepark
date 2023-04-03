@@ -1,4 +1,6 @@
 .inputWrap {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     background: #ffffff;
     border: 1px solid #dde3eb;
@@ -14,10 +16,20 @@
     color: var(--text-color);
     font-weight: 500;
     font-size: 18px;
+    width: 100%;
 }
 
 .inputWrap input::placeholder {
     font-weight: 500;
     font-size: 18px;
     color: var(--text-box-color);
+    background: unset;
+}
+
+.inputWrap input:-webkit-autofill,
+.inputWrap input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 18px;
 }

@@ -1,0 +1,69 @@
+.custom-select-wrap select {
+  display: none;
+}
+
+.custom-select {
+  max-width: 260px;
+  width: 260px;
+  position: relative;
+}
+
+.activeValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--borders-color);
+  padding: 20px;
+  border-radius: 15px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.activeValue.active i {
+  transform: rotate(540deg);
+}
+
+.activeValue i {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.activeValue:hover {
+  cursor: pointer;
+  background: var(--bg-color);
+}
+
+.custom-select-list {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  transform: translateY(-50%);
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  background: #ffffff;
+  border: 1px solid var(--borders-color);
+  padding: 30px 0 10px 0;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.custom-select-list.active {
+  display: flex;
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.select-list-item {
+  padding: 15px 20px;
+  font-weight: 500;
+}
+
+.select-list-item:hover {
+  cursor: pointer;
+  background: var(--bg-color);
+}

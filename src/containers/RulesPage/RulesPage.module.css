@@ -1,0 +1,10 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 0px;
+  gap: 40px;
+}
+
+.cards div {
+  width: 360px;
+}
