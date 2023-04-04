@@ -43,7 +43,7 @@ export const PersonalCabinetPage = () => {
           <br />
           <div className="d-flex gap align-items-center jusify-content-center">
             <Button type="default">Войти</Button>
-            <Button type="default" onClick={() => router.push("/")}>
+            <Button type="default_outline" onClick={() => router.push("/")}>
               Вернуться на главную
             </Button>
           </div>

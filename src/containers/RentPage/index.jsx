@@ -210,7 +210,7 @@ export const RentPage = () => {
             )}
             {productsStatus === "loaded" && (
               <div className="card-main">
-                <div className={styles["products-filter"]}>
+                {/* <div className={styles["products-filter"]}>
                   <div className={styles["filter-item"]}>
                     <span className="caption">Бренд</span>
                     <Select
@@ -233,7 +233,7 @@ export const RentPage = () => {
                       className={styles["filter-select"]}
                     />
                   </div>
-                </div>
+                </div> */}
 
                 <SizeTable />
 

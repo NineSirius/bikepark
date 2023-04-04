@@ -158,6 +158,7 @@ export const Navbar = () => {
           isSuccess={() => {
             localStorage.removeItem("user");
             setUserJWT(null);
+            location.reload();
           }}
         />
 
