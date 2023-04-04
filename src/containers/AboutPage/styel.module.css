@@ -1,0 +1,53 @@
+.const-1 {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.img-wrap img {
+  width: 560px;
+  height: 286px;
+  border-radius: 20px;
+  margin-top: 80px;
+}
+
+.taitel-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+}
+
+.cards {
+  max-width: 360px;
+  min-height: 301px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+.cards-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.taitel-wrap-1 {
+  padding: 20px;
+}
+.avtor {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.taitel-avtor {
+  color: #abb1c5;
+}
+
+@media (max-width: 1100px) {
+  .const-1 {
+    flex-wrap: wrap;
+  }
+  .img-wrap img {
+    max-width: 100%;
+  }
+}
