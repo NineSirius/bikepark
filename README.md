@@ -2,8 +2,11 @@ This is a [Next.js](https://nextjs.org/) project for my exam.
 
 ## About project
 
-Этот проект, я со своей командой делал для экзамена когда учился, и мы не успели сделать его полностью (Потому что делал я его в основном сам, по крайней мере всю логику делал я 😕). 
-В проекте мы использовали:
+
+This project, I and my team did for the exam when I studied and we did not have time to do it completely (Because I did it mostly by myself, at least I did all the logic 😕). 
+
+#### In the project we used:
+
 - Next
 - Ky (client requests), react-tabs
 
